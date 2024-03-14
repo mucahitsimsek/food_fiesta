@@ -1,0 +1,16 @@
+{
+    "home": {
+        "title": "Home"
+    },
+    "general": {
+        "button": {
+            "save": "Save"
+        },
+        "dialog": {
+            "version": {
+                "title": "Version",
+                "message": "Version Info"
+            }
+        }
+    }
+}

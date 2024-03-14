@@ -1,0 +1,16 @@
+{
+    "home": {
+        "title": "Anasayfa"
+    },
+    "general": {
+        "button": {
+            "save": "Kaydet"
+        },
+        "dialog": {
+            "version": {
+                "title": "Versiyon",
+                "message": "Versiyon Bilgisi"
+            }
+        }
+    }
+}
