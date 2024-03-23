@@ -1,14 +1,59 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
 abstract class  LocaleKeys {
-  static const home_title = 'home.title';
-  static const home = 'home';
+  static const logo_title = 'logo.title';
+  static const logo = 'logo';
   static const general_button_save = 'general.button.save';
+  static const general_button_getStarted = 'general.button.getStarted';
   static const general_button = 'general.button';
   static const general_dialog_version_title = 'general.dialog.version.title';
   static const general_dialog_version_message = 'general.dialog.version.message';
   static const general_dialog_version = 'general.dialog.version';
   static const general_dialog = 'general.dialog';
   static const general = 'general';
+  static const welcome_title = 'welcome.title';
+  static const welcome_message = 'welcome.message';
+  static const welcome = 'welcome';
+  static const walkthrough_title = 'walkthrough.title';
+  static const walkthrough_firstDescription = 'walkthrough.firstDescription';
+  static const walkthrough_firstMessage = 'walkthrough.firstMessage';
+  static const walkthrough_secondDescription = 'walkthrough.secondDescription';
+  static const walkthrough_secondMessage = 'walkthrough.secondMessage';
+  static const walkthrough_thirdDescription = 'walkthrough.thirdDescription';
+  static const walkthrough_thirdMessage = 'walkthrough.thirdMessage';
+  static const walkthrough = 'walkthrough';
+  static const signIn_title = 'signIn.title';
+  static const signIn_description = 'signIn.description';
+  static const signIn_subDescription = 'signIn.subDescription';
+  static const signIn_email = 'signIn.email';
+  static const signIn_password = 'signIn.password';
+  static const signIn_button_login = 'signIn.button.login';
+  static const signIn_button_facebook = 'signIn.button.facebook';
+  static const signIn_button_google = 'signIn.button.google';
+  static const signIn_button_register = 'signIn.button.register';
+  static const signIn_button_createAccount = 'signIn.button.createAccount';
+  static const signIn_button = 'signIn.button';
+  static const signIn_forgotPassword = 'signIn.forgotPassword';
+  static const signIn_forgotDescription = 'signIn.forgotDescription';
+  static const signIn_dontHaveAccount = 'signIn.dontHaveAccount';
+  static const signIn_or = 'signIn.or';
+  static const signIn_reset = 'signIn.reset';
+  static const signIn_resetDescription = 'signIn.resetDescription';
+  static const signIn_resendReset = 'signIn.resendReset';
+  static const signIn_createAccount_title = 'signIn.createAccount.title';
+  static const signIn_createAccount_subTitle = 'signIn.createAccount.subTitle';
+  static const signIn_createAccount_description = 'signIn.createAccount.description';
+  static const signIn_createAccount_subDescription = 'signIn.createAccount.subDescription';
+  static const signIn_createAccount_name = 'signIn.createAccount.name';
+  static const signIn_createAccount_button_signUp = 'signIn.createAccount.button.signUp';
+  static const signIn_createAccount_button = 'signIn.createAccount.button';
+  static const signIn_createAccount = 'signIn.createAccount';
+  static const signIn_getStartedWithFoodFiesta = 'signIn.getStartedWithFoodFiesta';
+  static const signIn_getStartedDescription = 'signIn.getStartedDescription';
+  static const signIn_phoneNumber = 'signIn.phoneNumber';
+  static const signIn_signUp = 'signIn.signUp';
+  static const signIn = 'signIn';
+  static const home_title = 'home.title';
+  static const home = 'home';
 
 }
