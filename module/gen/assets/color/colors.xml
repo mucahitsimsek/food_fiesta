@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
-    <color name="gray_70">#EEEEEE</color>
-    <color name="gray_410">#979797</color>
-    <color name="crimson_red" type="material">#CF2A2A</color>
-    <color name="yellow_ocher" type="material material-accent">#DF9527</color>
+    <color name="mainColorBlack">#010F07</color>
+    <color name="activeColor_one">#EEA734</color>
+    <color name="bodyText">#868686</color>
+    <color name="inputColor">#FBFBFB</color>
+    <color name="backgroundColor">#FFFFFF</color>
+    <color name="accentColor">#F8B64C</color>
+    <color name="green">#22A45D</color>
+    <color name="red">#FF7058</color>
+    <color name="yellow">#FFD15C</color>
 </resources>

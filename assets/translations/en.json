@@ -1,10 +1,14 @@
 {
+    "logo": {
+        "title": "Food Fiesta"
+    },
     "home": {
         "title": "Home"
     },
     "general": {
         "button": {
-            "save": "Save"
+            "save": "Save",
+            "getStarted": "Get Started"
         },
         "dialog": {
             "version": {
@@ -12,5 +16,31 @@
                 "message": "Version Info"
             }
         }
+    },
+    "welcome": {
+        "title": "Welcome to Food Fiesta",
+        "message": "It’s a pleasure to meet you. We are excited that you’re here so let’s get started!"
+    },
+    "walkthrough": {
+        "title": "Walkthrough",
+        "firstDescription": "All your favorites",
+        "firstMessage": "Order from the best local restaurants with easy, on-demand delivery.",
+        "secondDescription": "Free delivery offers",
+        "secondMessage": "Free delivery for new customers via Apple Pay and others payment methods.",
+        "thirdDescription": "Choose your food",
+        "thirdMessage": "Easily find your type of food craving and you’ll get delivery in wide range."
+    },
+    "signIn": {
+        "title": "Login",
+        "email": "Email Address",
+        "password": "Password",
+        "button": {
+            "login": "login",
+            "facebook": "Login with Facebook",
+            "google": "Login with Google",
+            "register": "Register"
+        },
+        "forgotPassword": "Forgot Password?",
+        "createAccount": "Create Account"
     }
 }

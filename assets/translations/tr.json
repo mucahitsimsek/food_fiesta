@@ -1,10 +1,14 @@
 {
+    "logo": {
+        "title": "Food Fiesta"
+    },
     "home": {
         "title": "Anasayfa"
     },
     "general": {
         "button": {
-            "save": "Kaydet"
+            "save": "Kaydet",
+            "getStarted": "Başla"
         },
         "dialog": {
             "version": {
@@ -12,5 +16,31 @@
                 "message": "Versiyon Bilgisi"
             }
         }
+    },
+    "welcome": {
+        "title": "Food Fiesta'ya Hoş geldiniz",
+        "message": "Sizinle tanışmak bir şeref idi. Burada olduğunuz için heyecanlıyız o yüzden başlayalım!"
+    },
+    "walkthrough": {
+        "title": "Walkthrough",
+        "firstDescription": "Favorilerinizden sipariş verin",
+        "firstMessage": "Favori restoranlarınızdan sipariş vermek için uygulamamızı kullanın.",
+        "secondDescription": "Ücretsiz teslimat",
+        "secondMessage": "Siparişlerinizi ücretsiz teslimat ile alın.",
+        "thirdDescription": "Her türlü yemeği bulun",
+        "thirdMessage": "Her türlü yemeği bulabileceğiniz bir uygulama."
+    },
+    "signIn": {
+        "title": "Giriş Yap",
+        "email": "Email Adresi",
+        "password": "Şifre",
+        "button": {
+            "login": "Giriş Yap",
+            "facebook": "Facebook ile Giriş Yap",
+            "google": "Google ile Giriş Yap",
+            "register": "Kayıt Ol"
+        },
+        "forgotPassword": "Şifremi Unuttum?",
+        "createAccount": "Hesap Oluştur"
     }
 }
