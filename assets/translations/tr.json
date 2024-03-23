@@ -2,9 +2,6 @@
     "logo": {
         "title": "Food Fiesta"
     },
-    "home": {
-        "title": "Anasayfa"
-    },
     "general": {
         "button": {
             "save": "Kaydet",
@@ -32,15 +29,40 @@
     },
     "signIn": {
         "title": "Giriş Yap",
+        "description": "Food Fiesta Yemek Servisine Hoş geldiniz",
+        "subDescription": "Giriş yapmak için telefon numarası ya da email adresi kullanabilirsiniz. Afiyet olsun :)",
         "email": "Email Adresi",
         "password": "Şifre",
         "button": {
             "login": "Giriş Yap",
             "facebook": "Facebook ile Giriş Yap",
             "google": "Google ile Giriş Yap",
-            "register": "Kayıt Ol"
+            "register": "Kayıt Ol",
+            "createAccount": "Hesap Oluştur"
         },
         "forgotPassword": "Şifremi Unuttum?",
-        "createAccount": "Hesap Oluştur"
+        "forgotDescription": "Şifrenizi sıfırlamak için email adresinizi girin",
+        "dontHaveAccount": "Hesabınız Yok mu?",
+        "or": "Ya da",
+        "reset": "Şifremi Sıfırla",
+        "resetDescription": "Email Adresine şifre sıfırlama e-postası gönderildi.",
+        "resendReset": "Tekrar Gönder",
+        "createAccount": {
+            "title": "Hesap Oluştur",
+            "subTitle": "Zaten bir hesabınız var mı?",
+            "description": "Adınız, soyadınız ve email adresinizi girerek kayıt olabilirsiniz.",
+            "subDescription": "Kayıt olmak için kullanıcı sözleşmesini kabul etmeniz gerekmektedir.",
+            "name": "Adınız Soyadınız",
+            "button": {
+                "signUp": "Kayıt Ol"
+            }
+        },
+        "getStartedWithFoodFiesta": "Food Fiesta ile Başla",
+        "getStartedDescription": "Hemen başlamak için telefon numaranızı girin. Afiyet olsun :)",
+        "phoneNumber": "Telefon Numarası",
+        "signUp": "Kayıt Ol"
+    },
+    "home": {
+        "title": "Anasayfa"
     }
 }

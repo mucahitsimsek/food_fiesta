@@ -2,9 +2,6 @@
     "logo": {
         "title": "Food Fiesta"
     },
-    "home": {
-        "title": "Home"
-    },
     "general": {
         "button": {
             "save": "Save",
@@ -31,16 +28,40 @@
         "thirdMessage": "Easily find your type of food craving and you’ll get delivery in wide range."
     },
     "signIn": {
-        "title": "Login",
+        "title": "Sign In",
+        "description": "Welcome to Food Fiesta Food Services",
+        "subDescription": "Enter your Phone number or Email address for sign in. Enjoy your food :)",
         "email": "Email Address",
         "password": "Password",
         "button": {
-            "login": "login",
+            "login": "Sign In",
             "facebook": "Login with Facebook",
             "google": "Login with Google",
             "register": "Register"
         },
         "forgotPassword": "Forgot Password?",
-        "createAccount": "Create Account"
+        "forgotDescription": "Enter your email address and we will send you a reset instructions.",
+        "dontHaveAccount": "Don't have an account?",
+        "or": "Or",
+        "reset": "Reset Password",
+        "resetDescription": "We have sent a instructions email to",
+        "resendReset": "Send Again",
+        "createAccount": {
+            "title": "Create Account",
+            "subTitle": "Already have account?",
+            "description": "Enter your Name, Email and Password for sign up.",
+            "subDescription": "By Signing up you agree to our Terms Conditions & Privacy Policy.",
+            "name": "Full name",
+            "button": {
+                "signUp": "Sign Up"
+            }
+        },
+        "getStartedWithFoodFiesta": "Get Started with Food Fiesta",
+        "getStartedDescription": "Enter your Phone number for sign in. Enjoy your food :)",
+        "phoneNumber": "Phone Number",
+        "signUp": "Sign Up"
+    },
+    "home": {
+        "title": "Home"
     }
 }
