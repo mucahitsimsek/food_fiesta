@@ -15,73 +15,25 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
-    HomeDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<HomeDetailRouteArgs>();
+    LoginRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: HomeDetailView(
-          id: args.id,
-          key: args.key,
-        ),
+        child: const LoginView(),
       );
-    },
-    HomeRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const HomeView(),
-      );
-    },
+    }
   };
 }
 
 /// generated route for
-/// [HomeDetailView]
-class HomeDetailRoute extends PageRouteInfo<HomeDetailRouteArgs> {
-  HomeDetailRoute({
-    required int id,
-    Key? key,
-    List<PageRouteInfo>? children,
-  }) : super(
-          HomeDetailRoute.name,
-          args: HomeDetailRouteArgs(
-            id: id,
-            key: key,
-          ),
-          initialChildren: children,
-        );
-
-  static const String name = 'HomeDetailRoute';
-
-  static const PageInfo<HomeDetailRouteArgs> page =
-      PageInfo<HomeDetailRouteArgs>(name);
-}
-
-class HomeDetailRouteArgs {
-  const HomeDetailRouteArgs({
-    required this.id,
-    this.key,
-  });
-
-  final int id;
-
-  final Key? key;
-
-  @override
-  String toString() {
-    return 'HomeDetailRouteArgs{id: $id, key: $key}';
-  }
-}
-
-/// generated route for
-/// [HomeView]
-class HomeRoute extends PageRouteInfo<void> {
-  const HomeRoute({List<PageRouteInfo>? children})
+/// [LoginView]
+class LoginRoute extends PageRouteInfo<void> {
+  const LoginRoute({List<PageRouteInfo>? children})
       : super(
-          HomeRoute.name,
+          LoginRoute.name,
           initialChildren: children,
         );
 
-  static const String name = 'HomeRoute';
+  static const String name = 'LoginRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

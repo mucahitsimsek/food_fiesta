@@ -5,78 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "architecture_template",
+            "name": "food_fiesta",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "architecture_template (profile mode)",
+            "name": "food_fiesta (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "architecture_template (release mode)",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "common",
-            "cwd": "module\\common",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "common (profile mode)",
-            "cwd": "module\\common",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "common (release mode)",
-            "cwd": "module\\common",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "core",
-            "cwd": "module\\core",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "core (profile mode)",
-            "cwd": "module\\core",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "core (release mode)",
-            "cwd": "module\\core",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "release"
-        },
-        {
-            "name": "widgets",
-            "cwd": "module\\widgets",
-            "request": "launch",
-            "type": "dart"
-        },
-        {
-            "name": "widgets (profile mode)",
-            "cwd": "module\\widgets",
-            "request": "launch",
-            "type": "dart",
-            "flutterMode": "profile"
-        },
-        {
-            "name": "widgets (release mode)",
-            "cwd": "module\\widgets",
+            "name": "food_fiesta (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
