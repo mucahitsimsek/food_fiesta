@@ -1,5 +1,5 @@
 # Food Fiesta 
-Flutter'da öğrendiğim tüm içeriklerin bu repoda olmasını sağlayacağım.
+Flutter'da öğrendiğim tüm içeriklerin bu repoda olması için çalışacağım.
 
 
 # Figma
