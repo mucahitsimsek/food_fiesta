@@ -1,4 +1,4 @@
-# food_fiesta
+# Food Fiesta 
 VBT Stajımda takım arkadaşlarımla başladığım lakin bitiremediğim projeyi tekrar oluşturuyorum.  
 
 
