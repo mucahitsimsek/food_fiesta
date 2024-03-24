@@ -1,9 +1,7 @@
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
-import 'package:architecture_template/product/init/product_localization.dart';
-import 'package:architecture_template/product/utility/constants/enums/app_values.dart';
-import 'package:architecture_template/product/utility/constants/enums/locales.dart';
 import 'package:architecture_template/product/widget/button/app_button.dart';
 import 'package:architecture_template/product/widget/gap/app_gap.dart';
+import 'package:architecture_template/product/widget/logo_widget.dart';
 import 'package:architecture_template/product/widget/padding/app_padding.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -20,41 +18,16 @@ class WelcomeView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned(
-            top: -context.sized.height * 0.075,
-            left: -context.sized.width * 0.15,
-            child: Container(
-              width: context.sized.width,
-              height: context.sized.height * 0.5,
-              decoration: BoxDecoration(
-                color: ColorName.accentColor.withOpacity(0.5),
-                shape: BoxShape.circle,
-              ),
-            ),
-          ),
+          _roundedBox(context),
           Padding(
             padding: AppPadding.only(
-              top: context.sized.height * 0.125,
+              top: context.sized.height * 0.15,
             ),
             child: Align(
               alignment: Alignment.topCenter,
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Assets.icons.logoIcon.svg(),
-                      const AppGap.small(),
-                      Text(
-                        LocaleKeys.logo_title,
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontSize: AppValues.extraLarge.value,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ).tr(),
-                    ],
-                  ),
+                  const LogoWidget(),
                   const AppGap.big(),
                   Assets.icons.welcomeIceCreamIcon.svg(),
                   const AppGap.regular(),
@@ -67,7 +40,10 @@ class WelcomeView extends StatelessWidget {
                   AppButton(
                     title: LocaleKeys.general_button_getStarted.tr(),
                     onPressed: () {
-                      ProductLocalization.updateLang(context, Locales.tr);
+                      context.router.pushNamed('/introduction');
+                      // context.pushRoute(
+                      //   const IntroductionRoute(),
+                      // );
                     },
                   ),
                 ],
@@ -75,6 +51,21 @@ class WelcomeView extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Positioned _roundedBox(BuildContext context) {
+    return Positioned(
+      top: -context.sized.height * 0.1,
+      left: -context.sized.width * 0.15,
+      child: Container(
+        width: context.sized.width,
+        height: context.sized.height * 0.6,
+        decoration: BoxDecoration(
+          color: ColorName.accentColor.withOpacity(0.5),
+          shape: BoxShape.circle,
+        ),
       ),
     );
   }
