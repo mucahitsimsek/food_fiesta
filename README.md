@@ -1,5 +1,5 @@
 # Food Fiesta 
-VBT Stajımda takım arkadaşlarımla başladığım lakin bitiremediğim projeyi tekrar oluşturuyorum.  
+Flutter'da öğrendiğim tüm içeriklerin bu repoda olmasını sağlayacağım.
 
 
 # Figma
