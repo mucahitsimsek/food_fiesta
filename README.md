@@ -14,4 +14,5 @@ Bu sebeple tercihim oldu.
 - State Management için Bloc Pattern tercih edilecektir.
 - Backend yapımı için Firebase - Node.JS - ASP.NET - GO tercihlerini inceleyip tercih edilmesi gerekmektedir.
 
-Last Page: ![Son Sayfa]([last_page.png](https://github.com/mucahitsimsek/food_fiesta/blob/main/last_page.png)https://github.com/mucahitsimsek/food_fiesta/blob/main/last_page.png)
+
+Last Page: ![Son Sayfa](last_page.png)
