@@ -7,3 +7,9 @@ VBT Stajımda takım arkadaşlarımla başladığım lakin bitiremediğim projey
 
 Bu hazır template'i seçmemin nedeni, içeriği gerçek bir proje geliştirilmesine yatkın bir şekilde oluşturulmuş.
 Bu sebeple tercihim oldu. 
+
+# TODO LİST
+
+- UI effective şekilde performanslı oluşturulmalı.
+- State Management için Bloc Pattern tercih edilecektir.
+- Backend yapımı için Firebase - Node.JS - ASP.NET - GO tercihlerini inceleyip tercih edilmesi gerekmektedir.
