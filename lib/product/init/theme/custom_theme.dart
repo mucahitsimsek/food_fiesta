@@ -7,4 +7,13 @@ abstract class CustomTheme {
 
   ///FloatingActionButton [ThemeData] for the app.
   FloatingActionButtonThemeData get floatingActionButtonThemeData;
+
+  ///ElevatedButton [ThemeData] for the app.
+  ElevatedButtonThemeData get elevatedButtonThemeData;
+
+  ///TextStyle [ThemeData] for the app.
+  TextTheme get textTheme;
+
+  ///InputDecoration [ThemeData] for the app.
+  InputDecorationTheme get inputDecorationTheme;
 }

@@ -19,6 +19,7 @@ analyzer:
     - "lib/generated_plugin_registrant.dart"
   errors:
     invalid_annotation_target: ignore
+    
 linter:
   # The lint rules applied to this project can be customized in the
   # section below to disable rules from the `package:flutter_lints/flutter.yaml`
@@ -31,9 +32,10 @@ linter:
   # `// ignore_for_file: name_of_lint` syntax on the line or in the file
   # producing the lint.
   rules:
-    # public_member_api_docs: false
+    public_member_api_docs: false
     sort_pub_dependencies: false
     lines_longer_than_80_chars: false
+    constant_identifier_names: false
     # avoid_print: false  # Uncomment to disable the `avoid_print` rule
     # prefer_single_quotes: true  # Uncomment to enable the `prefer_single_quotes` rule
 # Additional information about this file can be found at

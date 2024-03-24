@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-/// Padding attributes for the HMG App
+/// Padding attributes for the MY APP
 final class AppPadding extends EdgeInsets {
+  /// [AppPadding.small] 8 point small size padding for all
+  const AppPadding.extraSmall() : super.all(4);
+
   /// [AppPadding.small] 8 point small size padding for all
   const AppPadding.small() : super.all(8);
 
@@ -19,6 +22,9 @@ final class AppPadding extends EdgeInsets {
 
   /// [AppPadding.allBig] big all padding size
   const AppPadding.allBig() : super.all(30);
+
+  /// [AppPadding.allBig] big all padding size
+  const AppPadding.extraBig() : super.all(40);
 
   /// [AppPadding.symmetricHorizontalRegular] regular horizontal padding size
   const AppPadding.symmetricHorizontalRegular()

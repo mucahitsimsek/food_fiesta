@@ -21,6 +21,22 @@ class $AssetsColorGen {
   List<String> get values => [colors];
 }
 
+class $AssetsFontsGen {
+  const $AssetsFontsGen();
+
+  /// File path: assets/fonts/sfpro_bold.OTF
+  String get sfproBold => 'packages/gen/assets/fonts/sfpro_bold.OTF';
+
+  /// File path: assets/fonts/sfpro_medium.OTF
+  String get sfproMedium => 'packages/gen/assets/fonts/sfpro_medium.OTF';
+
+  /// File path: assets/fonts/sfpro_regular.OTF
+  String get sfproRegular => 'packages/gen/assets/fonts/sfpro_regular.OTF';
+
+  /// List of all assets
+  List<String> get values => [sfproBold, sfproMedium, sfproRegular];
+}
+
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
@@ -200,6 +216,7 @@ class Assets {
   static const String package = 'gen';
 
   static const $AssetsColorGen color = $AssetsColorGen();
+  static const $AssetsFontsGen fonts = $AssetsFontsGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
