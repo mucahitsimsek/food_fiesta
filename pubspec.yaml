@@ -32,6 +32,7 @@ dependencies:
   widgets:
     path: module/widgets
   dio: ^5.4.0
+  smooth_page_indicator: ^1.1.0
 
 # dependency_overrides:
 #   # flutter_lints: ^1.0.0
