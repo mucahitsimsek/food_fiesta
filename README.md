@@ -16,3 +16,5 @@ Bu sebeple tercihim oldu.
 
 
 Son Bitirdiğim Sayfa Görünümü: ![Son Sayfa](last_page.png)
+
+Son Bitirdiğim Sayfanın UI&UX Görünümü: ![Gif](last_page.mp4)
