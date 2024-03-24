@@ -15,4 +15,4 @@ Bu sebeple tercihim oldu.
 - Backend yapımı için Firebase - Node.JS - ASP.NET - GO tercihlerini inceleyip tercih edilmesi gerekmektedir.
 
 
-Last Page: ![Son Sayfa](last_page.png)
+Son Bitirdiğim Sayfa Görünümü: ![Son Sayfa](last_page.png)
