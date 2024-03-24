@@ -13,3 +13,5 @@ Bu sebeple tercihim oldu.
 - UI effective şekilde performanslı oluşturulmalı.
 - State Management için Bloc Pattern tercih edilecektir.
 - Backend yapımı için Firebase - Node.JS - ASP.NET - GO tercihlerini inceleyip tercih edilmesi gerekmektedir.
+
+Last Page: [Son Sayfa](last_page.png)
