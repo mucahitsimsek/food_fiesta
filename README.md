@@ -4,3 +4,6 @@ VBT Stajımda takım arkadaşlarımla başladığım lakin bitiremediğim projey
 
 # Figma
 [Figma'ya İlerle](https://www.figma.com/file/LQhk53Zfj03aOg6Z2Y1OMg/Food-App?type=design&node-id=0-1&mode=design&t=4mlpn1vqkTgpjQtf-0)
+
+Bu hazır template'i seçmemin nedeni, içeriği gerçek bir proje geliştirilmesine yatkın bir şekilde oluşturulmuş.
+Bu sebeple tercihim oldu. 
