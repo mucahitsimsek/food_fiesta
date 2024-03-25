@@ -1,6 +1,7 @@
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
 import 'package:architecture_template/product/navigation/app_router.dart';
 import 'package:architecture_template/product/utility/extensions/widget_ext.dart';
+import 'package:architecture_template/product/widget/app_column.dart';
 import 'package:architecture_template/product/widget/button/app_button.dart';
 import 'package:architecture_template/product/widget/logo_widget.dart';
 import 'package:architecture_template/product/widget/padding/app_padding.dart';
@@ -26,7 +27,7 @@ class _IntroductionViewState extends State<IntroductionView> with IntroductionVi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _introductionViewAppBar(),
-      body: Column(
+      body: AppColumn(
         children: [
           const LogoWidget(),
           SizedBox(

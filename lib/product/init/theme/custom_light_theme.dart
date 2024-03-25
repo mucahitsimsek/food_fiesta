@@ -16,6 +16,27 @@ final class CustomLightTheme implements CustomTheme {
         elevatedButtonTheme: elevatedButtonThemeData,
         textTheme: textTheme,
         inputDecorationTheme: inputDecorationTheme,
+        textButtonTheme: TextButtonThemeData(
+          style: ButtonStyle(
+            // backgroundColor: MaterialStateProperty.all(ColorName.accentColor),
+            padding: MaterialStateProperty.all(
+              EdgeInsets.symmetric(
+                horizontal: AppValues.small.value,
+                vertical: AppValues.extraSmall.value,
+              ),
+            ),
+
+            overlayColor: MaterialStatePropertyAll(
+              ColorName.activeColorOne.withOpacity(0.1),
+            ),
+            visualDensity: VisualDensity.comfortable,
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+            ),
+          ),
+        ),
       );
 
   @override

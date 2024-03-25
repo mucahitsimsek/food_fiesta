@@ -1,4 +1,5 @@
 import 'package:architecture_template/product/init/language/locale_keys.g.dart';
+import 'package:architecture_template/product/widget/app_column.dart';
 import 'package:architecture_template/product/widget/button/app_button.dart';
 import 'package:architecture_template/product/widget/gap/app_gap.dart';
 import 'package:architecture_template/product/widget/logo_widget.dart';
@@ -25,7 +26,7 @@ class WelcomeView extends StatelessWidget {
             ),
             child: Align(
               alignment: Alignment.topCenter,
-              child: Column(
+              child: AppColumn(
                 children: [
                   const LogoWidget(),
                   const AppGap.big(),
@@ -57,11 +58,11 @@ class WelcomeView extends StatelessWidget {
 
   Positioned _roundedBox(BuildContext context) {
     return Positioned(
-      top: -context.sized.height * 0.1,
+      top: -context.sized.height * 0.13,
       left: -context.sized.width * 0.15,
       child: Container(
         width: context.sized.width,
-        height: context.sized.height * 0.6,
+        height: context.sized.height * 0.65,
         decoration: BoxDecoration(
           color: ColorName.accentColor.withOpacity(0.5),
           shape: BoxShape.circle,

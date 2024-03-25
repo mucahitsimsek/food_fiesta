@@ -25,6 +25,12 @@ class ColorName {
   /// Color: #868686
   static const Color bodyText = Color(0xFF868686);
 
+  /// Color: #4285F4
+  static const Color facebook = Color(0xFF4285F4);
+
+  /// Color: #395998
+  static const Color google = Color(0xFF395998);
+
   /// Color: #22A45D
   static const Color green = Color(0xFF22A45D);
 

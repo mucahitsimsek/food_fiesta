@@ -27,6 +27,18 @@ final class AppPadding extends EdgeInsets {
   const AppPadding.extraBig() : super.all(40);
 
   /// [AppPadding.symmetricHorizontalRegular] regular horizontal padding size
+  const AppPadding.symmetricHrzntlSmall()
+      : super.symmetric(
+          horizontal: 8,
+        );
+
+  /// [AppPadding.symmetricHorizontalRegular] regular horizontal padding size
+  const AppPadding.symmetricHrzntlSmallBig()
+      : super.symmetric(
+          horizontal: 12,
+        );
+
+  /// [AppPadding.symmetricHorizontalRegular] regular horizontal padding size
   const AppPadding.symmetricHorizontalRegular()
       : super.symmetric(
           horizontal: 20,
