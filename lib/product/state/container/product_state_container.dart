@@ -1,5 +1,5 @@
-import 'package:architecture_template/product/service/manager/product_network_manager.dart';
-import 'package:architecture_template/product/state/view_model/product_viev_model.dart';
+import 'package:food_fiesta/product/service/manager/product_network_manager.dart';
+import 'package:food_fiesta/product/state/view_model/product_viev_model.dart';
 import 'package:get_it/get_it.dart';
 
 /// ProductStateContainer is a dependency injection class for product

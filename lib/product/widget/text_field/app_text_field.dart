@@ -1,5 +1,5 @@
-import 'package:architecture_template/product/utility/constants/enums/app_values.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/utility/constants/enums/app_values.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 

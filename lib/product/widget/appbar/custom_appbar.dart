@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -19,7 +20,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: widget.title != null ? Text(widget.title ?? '') : null,
+      title: widget.title != null ? Text(widget.title ?? '').tr() : null,
       centerTitle: true,
     );
   }

@@ -1,6 +1,6 @@
-import 'package:architecture_template/product/state/base/base_cubit.dart';
-import 'package:architecture_template/product/state/view_model/product_state.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/state/base/base_cubit.dart';
+import 'package:food_fiesta/product/state/view_model/product_state.dart';
 
 ///ProductViewModel
 class ProductViewModel extends BaseCubit<ProductState> {

@@ -1,12 +1,12 @@
-import 'package:architecture_template/product/init/language/locale_keys.g.dart';
-import 'package:architecture_template/product/widget/app_column.dart';
-import 'package:architecture_template/product/widget/button/app_button.dart';
-import 'package:architecture_template/product/widget/gap/app_gap.dart';
-import 'package:architecture_template/product/widget/logo_widget.dart';
-import 'package:architecture_template/product/widget/padding/app_padding.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/init/language/locale_keys.g.dart';
+import 'package:food_fiesta/product/widget/app_column.dart';
+import 'package:food_fiesta/product/widget/button/app_button.dart';
+import 'package:food_fiesta/product/widget/gap/app_gap.dart';
+import 'package:food_fiesta/product/widget/logo_widget.dart';
+import 'package:food_fiesta/product/widget/padding/app_padding.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
@@ -39,7 +39,7 @@ class WelcomeView extends StatelessWidget {
                   ).tr(),
                   const AppGap.extraBig(),
                   AppButton(
-                    title: LocaleKeys.general_button_getStarted.tr(),
+                    title: LocaleKeys.general_button_getStarted,
                     onPressed: () {
                       context.router.pushNamed('/introduction');
                       // context.pushRoute(
