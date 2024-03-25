@@ -34,7 +34,7 @@ class _IntroductionViewState extends State<IntroductionView> with IntroductionVi
             height: context.sized.height * 0.575,
             child: PageView.builder(
               controller: _pageController,
-              itemCount: 3,
+              itemCount: pageCount,
               itemBuilder: (context, index) {
                 return buildPageViewItem(index);
               },
@@ -43,7 +43,7 @@ class _IntroductionViewState extends State<IntroductionView> with IntroductionVi
           ),
           SmoothPageIndicator(
             controller: _pageController,
-            count: 3,
+            count: pageCount,
             effect: ExpandingDotsEffect(
               activeDotColor: ColorName.green,
               dotHeight: context.sized.height * 0.01,
