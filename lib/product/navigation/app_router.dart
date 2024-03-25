@@ -1,4 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:food_fiesta/feature/auth/view/login_view.dart';
+import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
+import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
 import 'package:logger/logger.dart';
 
 part 'app_router.gr.dart';
