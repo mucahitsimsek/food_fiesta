@@ -1,6 +1,3 @@
-import 'package:architecture_template/feature/auth/view/login_view.dart';
-import 'package:architecture_template/feature/introduction/view/introduction_view.dart';
-import 'package:architecture_template/feature/introduction/view/welcome_view.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:logger/logger.dart';
 

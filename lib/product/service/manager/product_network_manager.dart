@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:architecture_template/product/init/config/app_environment.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/init/config/app_environment.dart';
 import 'package:vexana/vexana.dart';
 
 /// ProductServiceManager is a network manager class for product

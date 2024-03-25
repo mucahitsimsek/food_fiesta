@@ -1,20 +1,20 @@
 // ignore_for_file: public_member_api_docs
 
-import 'package:architecture_template/product/init/language/locale_keys.g.dart';
-import 'package:architecture_template/product/utility/extensions/widget_ext.dart';
-import 'package:architecture_template/product/widget/app_column.dart';
-import 'package:architecture_template/product/widget/appbar/custom_appbar.dart';
-import 'package:architecture_template/product/widget/button/app_button.dart';
-import 'package:architecture_template/product/widget/button/app_text_button.dart';
-import 'package:architecture_template/product/widget/button/facebook_button.dart';
-import 'package:architecture_template/product/widget/button/google_button.dart';
-import 'package:architecture_template/product/widget/gap/app_gap.dart';
-import 'package:architecture_template/product/widget/text/header_text.dart';
-import 'package:architecture_template/product/widget/text/title_text.dart';
-import 'package:architecture_template/product/widget/text_field/app_text_field.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/init/language/locale_keys.g.dart';
+import 'package:food_fiesta/product/utility/extensions/widget_ext.dart';
+import 'package:food_fiesta/product/widget/app_column.dart';
+import 'package:food_fiesta/product/widget/appbar/custom_appbar.dart';
+import 'package:food_fiesta/product/widget/button/app_button.dart';
+import 'package:food_fiesta/product/widget/button/app_text_button.dart';
+import 'package:food_fiesta/product/widget/button/facebook_button.dart';
+import 'package:food_fiesta/product/widget/button/google_button.dart';
+import 'package:food_fiesta/product/widget/gap/app_gap.dart';
+import 'package:food_fiesta/product/widget/text/header_text.dart';
+import 'package:food_fiesta/product/widget/text/title_text.dart';
+import 'package:food_fiesta/product/widget/text_field/app_text_field.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
@@ -34,8 +34,8 @@ class _LoginViewState extends State<LoginView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        title: LocaleKeys.signIn_title.tr(),
+      appBar: const CustomAppBar(
+        title: LocaleKeys.signIn_title,
       ),
       body: AppColumn(
         children: [
