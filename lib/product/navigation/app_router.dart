@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:food_fiesta/feature/auth/view/login_view.dart';
+import 'package:food_fiesta/feature/auth/view/forgot_password_view.dart';
+import 'package:food_fiesta/feature/auth/view/sign_in_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
 import 'package:logger/logger.dart';
@@ -21,11 +22,18 @@ class AppRouter extends _$AppRouter {
         ),
         CustomRoute(
           page: IntroductionRoute.page,
-          path: '/introduction',
+          path: '/introductionView',
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
-        AutoRoute(
-          page: LoginRoute.page,
+        CustomRoute(
+          page: SignInRoute.page,
+          path: '/signInView',
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: ForgotPasswordRoute.page,
+          path: '/forgotPasswordView',
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];
 }

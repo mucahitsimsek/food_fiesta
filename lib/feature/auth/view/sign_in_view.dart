@@ -4,6 +4,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/init/language/locale_keys.g.dart';
+import 'package:food_fiesta/product/navigation/app_routes.dart';
 import 'package:food_fiesta/product/utility/extensions/widget_ext.dart';
 import 'package:food_fiesta/product/widget/app_column.dart';
 import 'package:food_fiesta/product/widget/appbar/custom_appbar.dart';
@@ -18,19 +19,17 @@ import 'package:food_fiesta/product/widget/text_field/app_text_field.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
+part './mixins/sign_in_view_mixin.dart';
+
 @RoutePage()
-class LoginView extends StatefulWidget {
-  const LoginView({super.key});
+class SignInView extends StatefulWidget {
+  const SignInView({super.key});
 
   @override
-  State<LoginView> createState() => _LoginViewState();
+  State<SignInView> createState() => _SignInViewtate();
 }
 
-class _LoginViewState extends State<LoginView> {
-  final GlobalKey<FormState> _emailFormKey = GlobalKey<FormState>();
-  final GlobalKey<FormState> _passwordFormKey = GlobalKey<FormState>();
-
-  final ValueNotifier<bool> _isVisibleDone = ValueNotifier<bool>(false);
+class _SignInViewtate extends State<SignInView> with _SignInViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,16 +54,7 @@ class _LoginViewState extends State<LoginView> {
             builder: (context, visible, child) => AppTextField(
               formKey: _emailFormKey,
               hintText: LocaleKeys.signIn_email.tr(),
-              validator: (value) {
-                _isVisibleDone.value = false;
-                if (value!.ext.isNullOrEmpty) {
-                  return 'Email is required';
-                } else if (!value.ext.isValidEmail) {
-                  return 'Email is not valid';
-                }
-                _isVisibleDone.value = true;
-                return null;
-              },
+              validator: _emailValidator,
               suffixIcon: Assets.icons.doneIcon
                   .svg(
                     colorFilter: const ColorFilter.mode(
@@ -83,18 +73,13 @@ class _LoginViewState extends State<LoginView> {
             formKey: _passwordFormKey,
             hintText: LocaleKeys.signIn_password.tr(),
             obscureText: true,
-            validator: (value) {
-              if (value!.ext.isNullOrEmpty) {
-                return 'Password is required';
-              } else if (!value.ext.isValidPassword) {
-                return 'Password is not valid';
-              }
-              return null;
-            },
+            validator: _passwordValidator,
           ),
           const AppGap.small(),
           AppTextButton(
-            onPressed: () {},
+            onPressed: () => _nextPage(
+              AppRoutes.forgotPasswordView.routeName,
+            ),
             title: LocaleKeys.signIn_forgotPassword,
           ),
           AppButton(
