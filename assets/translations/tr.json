@@ -43,6 +43,7 @@
         "forgotPassword": "Şifremi Unuttum?",
         "forgotDescription": "Şifrenizi sıfırlamak için email adresinizi girin",
         "dontHaveAccount": "Hesabınız Yok mu?",
+        "havingProblem": "Sorun mu yaşıyorsunuz?",
         "or": "Ya da",
         "reset": "Şifremi Sıfırla",
         "resetDescription": "Email Adresine şifre sıfırlama e-postası gönderildi.",

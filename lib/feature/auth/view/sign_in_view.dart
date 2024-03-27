@@ -15,9 +15,9 @@ import 'package:food_fiesta/product/widget/button/google_button.dart';
 import 'package:food_fiesta/product/widget/gap/app_gap.dart';
 import 'package:food_fiesta/product/widget/text/header_text.dart';
 import 'package:food_fiesta/product/widget/text/title_text.dart';
-import 'package:food_fiesta/product/widget/text_field/app_text_field.dart';
+import 'package:food_fiesta/product/widget/text_field/email_text_field.dart';
+import 'package:food_fiesta/product/widget/text_field/password_text_field.dart';
 import 'package:gen/gen.dart';
-import 'package:kartal/kartal.dart';
 
 part './mixins/sign_in_view_mixin.dart';
 
@@ -36,79 +36,65 @@ class _SignInViewtate extends State<SignInView> with _SignInViewMixin {
       appBar: const CustomAppBar(
         title: LocaleKeys.signIn_title,
       ),
-      body: AppColumn(
-        children: [
-          const HeaderText(
-            text: LocaleKeys.signIn_description,
-            textAlign: TextAlign.left,
-          ),
-          const AppGap.extraSmall(),
-          const TitleText(
-            text: LocaleKeys.signIn_subDescription,
-            textAlign: TextAlign.left,
-            maxLines: 4,
-          ),
-          const AppGap.small(),
-          ValueListenableBuilder(
-            valueListenable: _isVisibleDone,
-            builder: (context, visible, child) => AppTextField(
+      body: SingleChildScrollView(
+        child: AppColumn(
+          children: [
+            const HeaderText(
+              text: LocaleKeys.signIn_description,
+              textAlign: TextAlign.left,
+              maxLines: 4,
+            ),
+            const AppGap.extraSmall(),
+            const TitleText(
+              text: LocaleKeys.signIn_subDescription,
+              textAlign: TextAlign.left,
+              maxLines: 4,
+            ),
+            const AppGap.small(),
+            EmailTextField(
               formKey: _emailFormKey,
-              hintText: LocaleKeys.signIn_email.tr(),
-              validator: _emailValidator,
-              suffixIcon: Assets.icons.doneIcon
-                  .svg(
-                    colorFilter: const ColorFilter.mode(
-                      ColorName.yellow,
-                      BlendMode.srcIn,
-                    ),
-                  )
-                  .ext
-                  .toVisible(
-                    value: visible,
-                  ),
             ),
-          ),
-          const AppGap.small(),
-          AppTextField(
-            formKey: _passwordFormKey,
-            hintText: LocaleKeys.signIn_password.tr(),
-            obscureText: true,
-            validator: _passwordValidator,
-          ),
-          const AppGap.small(),
-          AppTextButton(
-            onPressed: () => _nextPage(
-              AppRoutes.forgotPasswordView.routeName,
+            const AppGap.small(),
+            PasswordTextField(
+              passwordFormKey: _passwordFormKey,
             ),
-            title: LocaleKeys.signIn_forgotPassword,
-          ),
-          AppButton(
-            title: LocaleKeys.signIn_button_login.tr(),
-            onPressed: () {
-              _passwordFormKey.currentState!.validate();
-              _emailFormKey.currentState!.validate();
-            },
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              TitleText(text: LocaleKeys.signIn_dontHaveAccount.tr()),
-              const AppGap.small(),
-              AppTextButton(
-                onPressed: () {},
-                title: LocaleKeys.signIn_createAccount_title.tr(),
-                color: ColorName.accentColor,
-                fontWeight: FontWeight.bold,
+            const AppGap.small(),
+            AppTextButton(
+              onPressed: () => context.navigateNamedTo(
+                AppRoutes.forgotPasswordView.path,
               ),
-            ],
-          ).center,
-          TitleText(text: LocaleKeys.signIn_or.tr()).center,
-          const AppGap.small(),
-          const GoogleButton(),
-          const AppGap.extraSmall(),
-          const FacebookButton(),
-        ],
-      ).center,
+              title: LocaleKeys.signIn_forgotPassword,
+            ),
+            AppButton(
+              title: LocaleKeys.signIn_button_login.tr(),
+              onPressed: () {
+                _passwordFormKey.currentState!.validate();
+                _emailFormKey.currentState!.validate();
+              },
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TitleText(text: LocaleKeys.signIn_dontHaveAccount.tr()),
+                const AppGap.small(),
+                AppTextButton(
+                  onPressed: () => context.navigateNamedTo(
+                    AppRoutes.createAccountView.path,
+                  ),
+                  title: LocaleKeys.signIn_createAccount_title.tr(),
+                  color: ColorName.accentColor,
+                  fontWeight: FontWeight.bold,
+                ),
+              ],
+            ).center,
+            TitleText(text: LocaleKeys.signIn_or.tr()).center,
+            const AppGap.small(),
+            const GoogleButton(),
+            const AppGap.extraSmall(),
+            const FacebookButton(),
+          ],
+        ).center,
+      ),
     );
   }
 }

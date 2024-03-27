@@ -15,6 +15,12 @@ abstract class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    CreateAccountRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const CreateAccountView(),
+      );
+    },
     ForgotPasswordRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -25,6 +31,12 @@ abstract class _$AppRouter extends RootStackRouter {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const IntroductionView(),
+      );
+    },
+    ResetEmailSentRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const ResetEmailSentView(),
       );
     },
     SignInRoute.name: (routeData) {
@@ -40,6 +52,20 @@ abstract class _$AppRouter extends RootStackRouter {
       );
     },
   };
+}
+
+/// generated route for
+/// [CreateAccountView]
+class CreateAccountRoute extends PageRouteInfo<void> {
+  const CreateAccountRoute({List<PageRouteInfo>? children})
+      : super(
+          CreateAccountRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'CreateAccountRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -66,6 +92,20 @@ class IntroductionRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'IntroductionRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ResetEmailSentView]
+class ResetEmailSentRoute extends PageRouteInfo<void> {
+  const ResetEmailSentRoute({List<PageRouteInfo>? children})
+      : super(
+          ResetEmailSentRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'ResetEmailSentRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

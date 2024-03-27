@@ -5,14 +5,14 @@ import 'package:kartal/kartal.dart';
 class TitleText extends StatelessWidget {
   const TitleText({
     required this.text,
-    this.maxLines = 1,
+    this.maxLines,
     this.textAlign = TextAlign.center,
     this.fontWeight = FontWeight.w300,
     this.color,
     super.key,
   });
   final String text;
-  final int maxLines;
+  final int? maxLines;
   final TextAlign textAlign;
   final Color? color;
   final FontWeight fontWeight;

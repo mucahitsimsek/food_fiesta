@@ -27,45 +27,43 @@ class _IntroductionViewState extends State<IntroductionView> with IntroductionVi
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: _introductionViewAppBar(),
-      body: AppColumn(
-        children: [
-          const LogoWidget(),
-          SizedBox(
-            height: context.sized.height * 0.575,
-            child: PageView.builder(
-              controller: _pageController,
-              itemCount: pageCount,
-              itemBuilder: (context, index) {
-                return buildPageViewItem(index);
-              },
-              physics: const BouncingScrollPhysics(),
-            ),
-          ),
-          SmoothPageIndicator(
-            controller: _pageController,
-            count: pageCount,
-            effect: ExpandingDotsEffect(
-              activeDotColor: ColorName.green,
-              dotHeight: context.sized.height * 0.01,
-            ),
-          ),
-          ValueListenableBuilder(
-            valueListenable: _isLastPage,
-            builder: (context, value, child) {
-              return AppButton(
-                title: LocaleKeys.general_button_getStarted,
-                onPressed: () {
-                  if (value) {
-                    context.router.pushNamed(AppRoutes.signInView.routeName);
-                  } else {
-                    _changePage;
-                  }
+      body: SingleChildScrollView(
+        child: AppColumn(
+          children: [
+            const LogoWidget(),
+            SizedBox(
+              height: context.sized.height * 0.6,
+              child: PageView.builder(
+                controller: _pageController,
+                itemCount: pageCount,
+                itemBuilder: (context, index) {
+                  return buildPageViewItem(index);
                 },
-              );
-            },
-          ),
-        ],
-      ).center,
+                physics: const BouncingScrollPhysics(),
+              ),
+            ),
+            SmoothPageIndicator(
+              controller: _pageController,
+              count: pageCount,
+              effect: ExpandingDotsEffect(
+                activeDotColor: ColorName.green,
+                dotHeight: context.sized.height * 0.01,
+              ),
+            ),
+            ValueListenableBuilder(
+              valueListenable: _isLastPage,
+              builder: (context, value, child) {
+                return AppButton(
+                  title: LocaleKeys.general_button_getStarted,
+                  onPressed: () {
+                    _onPressedGetStarted(value);
+                  },
+                );
+              },
+            ),
+          ],
+        ).center,
+      ),
     );
   }
 

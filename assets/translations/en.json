@@ -42,6 +42,7 @@
         "forgotPassword": "Forgot Password?",
         "forgotDescription": "Enter your email address and we will send you a reset instructions.",
         "dontHaveAccount": "Don't have an account?",
+        "havingProblem": "Having problem?",
         "or": "Or",
         "reset": "Reset Password",
         "resetDescription": "We have sent a instructions email to",

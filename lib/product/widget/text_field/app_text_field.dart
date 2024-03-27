@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/utility/constants/enums/app_values.dart';
 import 'package:gen/gen.dart';
@@ -69,7 +70,7 @@ class _AppTextFieldState extends State<AppTextField> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                widget.hintText?.toUpperCase() ?? '',
+                widget.hintText?.tr().toUpperCase() ?? '',
                 style: TextStyle(
                   color: ColorName.bodyText, // Metin rengi
                   fontSize: AppValues.smallBig.value, // Metin boyutu
@@ -85,7 +86,7 @@ class _AppTextFieldState extends State<AppTextField> {
               validator: widget.validator,
               onChanged: widget.onChanged,
               decoration: InputDecoration(
-                hintText: widget.hintText ?? '',
+                hintText: widget.hintText?.tr() ?? '',
                 suffixIcon: widget.suffixIcon ??
                     (widget.obscureText != null && widget.obscureText! == true
                         ? IconButton(

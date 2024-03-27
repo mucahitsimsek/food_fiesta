@@ -21,34 +21,34 @@ class WelcomeView extends StatelessWidget {
       body: Stack(
         children: [
           _roundedBox(context),
-          Padding(
-            padding: AppPadding.only(
-              top: context.sized.height * 0.15,
-            ),
-            child: Align(
-              alignment: Alignment.topCenter,
-              child: AppColumn(
-                children: [
-                  const LogoWidget(),
-                  const AppGap.big(),
-                  Assets.icons.welcomeIceCreamIcon.svg(),
-                  const AppGap.regular(),
-                  Text(
-                    LocaleKeys.welcome_message,
-                    textAlign: TextAlign.center,
-                    style: context.general.textTheme.titleMedium,
-                  ).tr(),
-                  const AppGap.extraBig(),
-                  AppButton(
-                    title: LocaleKeys.general_button_getStarted,
-                    onPressed: () {
-                      context.router.pushNamed(AppRoutes.introductionView.routeName);
-                      // context.pushRoute(
-                      //   const IntroductionRoute(),
-                      // );
-                    },
-                  ),
-                ],
+          SingleChildScrollView(
+            child: Padding(
+              padding: AppPadding.only(
+                top: context.sized.height * 0.15,
+              ),
+              child: Align(
+                alignment: Alignment.topCenter,
+                child: AppColumn(
+                  children: [
+                    const LogoWidget(),
+                    const AppGap.big(),
+                    Assets.icons.welcomeIceCreamIcon.svg(),
+                    const AppGap.regular(),
+                    Text(
+                      LocaleKeys.welcome_message,
+                      textAlign: TextAlign.center,
+                      style: context.general.textTheme.titleMedium,
+                    ).tr(),
+                    const AppGap.extraBig(),
+                    AppButton(
+                      title: LocaleKeys.general_button_getStarted,
+                      onPressed: () => context.navigateNamedTo(
+                        AppRoutes.introductionView.path,
+                      ),
+                    ),
+                    const AppGap.extraBig(),
+                  ],
+                ),
               ),
             ),
           ),

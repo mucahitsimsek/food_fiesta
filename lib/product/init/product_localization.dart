@@ -2,8 +2,6 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/utility/constants/enums/locales.dart';
 
-@immutable
-
 ///Project localization class for operation and configuration
 final class ProductLocalization extends EasyLocalization {
   ///Project localization class for operation and configuration
@@ -13,6 +11,7 @@ final class ProductLocalization extends EasyLocalization {
   }) : super(
           supportedLocales: _supportedLocales,
           path: _path,
+          startLocale: Locales.en.locale,
           useOnlyLangCode: true,
         );
 

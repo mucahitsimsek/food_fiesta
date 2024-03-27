@@ -36,4 +36,14 @@ mixin IntroductionViewMixin on State<IntroductionView> {
         duration: const Duration(milliseconds: 500),
         curve: Curves.ease,
       );
+
+  Future<void> _onPressedGetStarted(bool value) async {
+    if (value) {
+      await context.navigateNamedTo(
+        AppRoutes.signInView.path,
+      );
+    } else {
+      _changePage;
+    }
+  }
 }

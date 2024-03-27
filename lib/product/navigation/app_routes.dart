@@ -18,10 +18,20 @@ enum AppRoutes {
     '/introductionView',
     IntroductionRoute(),
   ),
+
+  resetEmailSentView(
+    '/resetEmailSentRoute',
+    ResetEmailSentRoute(),
+  ),
+
+  createAccountView(
+    '/createAccountRoute',
+    CreateAccountRoute(),
+  ),
   ;
 
   const AppRoutes(
-    this.routeName,
+    this.path,
     this.route,
   );
 
@@ -29,5 +39,5 @@ enum AppRoutes {
   final PageRouteInfo route;
 
   ///Route name
-  final String routeName;
+  final String path;
 }
