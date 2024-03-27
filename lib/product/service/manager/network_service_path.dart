@@ -1,10 +1,13 @@
 ///Service path enum
-enum ProductServicePath {
-  ///Service path for user
-  posts('posts'),
+enum NetworkServicePaths {
+  ///SignUP service path
+  signUp('signUp'),
+
+  ///SignIN service path
+  signIn('signInWithPassword'),
   ;
 
-  const ProductServicePath(this.value);
+  const NetworkServicePaths(this.value);
 
   ///Service path value
   final String value;

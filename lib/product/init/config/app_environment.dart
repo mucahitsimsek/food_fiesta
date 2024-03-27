@@ -20,6 +20,9 @@ enum AppEnvironmentItems {
   ///Project base url
   baseUrl,
 
+  ///Project auth url
+  authUrl,
+
   ///Project api key
   apiKey,
   ;
@@ -32,6 +35,8 @@ enum AppEnvironmentItems {
           return AppEnvironment._config.apiKey;
         case AppEnvironmentItems.baseUrl:
           return AppEnvironment._config.baseUrl;
+        case AppEnvironmentItems.authUrl:
+          return AppEnvironment._config.authUrl;
       }
     } catch (e) {
       throw Exception('AppEnvironmentType is not initialized $e');
