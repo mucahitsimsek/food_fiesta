@@ -8,27 +8,54 @@ import 'package:vexana/vexana.dart';
 ///LoginService is a network manager class for product
 class LoginService extends AuthanticationOperation {
   ///LoginService is a network manager class for product
-  LoginService({
-    required AuthenticationNetworkManager networkManager,
-  }) : _networkManager = networkManager;
+  LoginService({required AuthenticationNetworkManager networkManager})
+      : _networkManager = networkManager {
+    _init();
+  }
 
   final AuthenticationNetworkManager _networkManager;
 
+  void _init() {
+    _networkManager.interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.queryParameters.addAll(
+            {
+              'key': AppEnvironmentItems.apiKey.value,
+            },
+          );
+          options.validateStatus = (status) => status! < 500;
+
+          return handler.next(options);
+        },
+      ),
+    );
+  }
+
+  // _networkManager.send<User, User>(
+  //       '${NetworkServicePaths.signUp.value}?key=${AppEnvironmentItems.apiKey.value}',
+  //       parseModel: User(),
+  //       method: RequestType.POST,
+  //       data: user.toJson(),
+  //     ),
+
   @override
-  Future<User> signUp(String email, String password) {
+  Future<IResponseModel<User?, EmptyModel?>> signUp({
+    required String email,
+    required String password,
+  }) async {
     final user = User(email: email, password: password);
     final response = _networkManager.send<User, User>(
-      '${NetworkServicePaths.signUp.value}?key=${AppEnvironmentItems.apiKey.value}',
+      NetworkServicePaths.signUp.value,
       parseModel: User(),
       method: RequestType.POST,
       data: user.toJson(),
     );
-
-    return Future.value(user);
+    return response;
   }
 
   @override
-  Future<User> signIn(String email, String password) {
+  Future<User> signIn(String email, String password) async {
     throw UnimplementedError();
   }
 
