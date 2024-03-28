@@ -6,13 +6,14 @@ part 'auth_error_model.g.dart';
 
 /// [AuthErrorModel] is a model class that is used to parse the error response
 @JsonSerializable()
-final class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableMixin {
+final class AuthErrorModel extends INetworkModel<AuthErrorModel>
+    with EquatableMixin {
   /// [AuthErrorModel] is a model class that is used to parse the error response
   AuthErrorModel({
     this.code,
     this.message,
     this.status,
-    this.errors,
+    // this.errors,
   });
 
   /// [AuthErrorModel.fromJson] is a factory method that is used to parse the
@@ -21,7 +22,7 @@ final class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableM
   @JsonKey(name: 'code')
 
   /// [code] is a variable that is used to store the code
-  final String? code;
+  final int? code;
   @JsonKey(name: 'message')
 
   /// [message] is a variable that is used to store the message
@@ -31,9 +32,9 @@ final class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableM
   /// [status] is a variable that is used to store the status
   final String? status;
 
-  /// [errors] is a variable that is used to store the list of errors
-  @JsonKey(name: 'errors')
-  final List<Errors>? errors;
+  // /// [errors] is a variable that is used to store the list of errors
+  // @JsonKey(name: 'errors')
+  // final List<Errors>? errors;
 
   /// [toJson] is a method that is used to convert the model class to JSON
   @override
@@ -44,12 +45,27 @@ final class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableM
         code,
         message,
         status,
-        errors,
+        // errors,
       ];
 
   @override
   AuthErrorModel fromJson(Map<String, dynamic> json) {
     return _$AuthErrorModelFromJson(json);
+  }
+
+  /// [copyWith] is a method that is used to copy the model class
+  AuthErrorModel copyWith({
+    int? code,
+    String? message,
+    String? status,
+    List<Errors>? errors,
+  }) {
+    return AuthErrorModel(
+      code: code ?? this.code,
+      message: message ?? this.message,
+      status: status ?? this.status,
+      // errors: errors ?? this.errors,
+    );
   }
 }
 

@@ -1,12 +1,11 @@
 import 'package:food_fiesta/product/init/config/app_environment.dart';
-import 'package:food_fiesta/product/service/interface/authantication_opeartion.dart';
 import 'package:food_fiesta/product/service/manager/authentication_network_manager.dart';
 import 'package:food_fiesta/product/service/manager/network_service_path.dart';
 import 'package:gen/gen.dart';
 import 'package:vexana/vexana.dart';
 
 ///LoginService is a network manager class for product
-class LoginService extends AuthanticationOperation {
+class LoginService {
   ///LoginService is a network manager class for product
   LoginService({required AuthenticationNetworkManager networkManager})
       : _networkManager = networkManager {
@@ -24,7 +23,6 @@ class LoginService extends AuthanticationOperation {
               'key': AppEnvironmentItems.apiKey.value,
             },
           );
-          options.validateStatus = (status) => status! < 500;
 
           return handler.next(options);
         },
@@ -39,18 +37,36 @@ class LoginService extends AuthanticationOperation {
   //       data: user.toJson(),
   //     ),
 
+  Future<void> siginup() async {
+    final response = AuthResponseModel<User>(
+      requestCallback: _networkManager.send<User, User>(
+        NetworkServicePaths.signUp.value,
+        parseModel: User(),
+        method: RequestType.POST,
+        data: {
+          'email': 'mucahitsmsk@icloud.com',
+          'password': '231231*_0?aAa-',
+        },
+      ),
+    );
+
+    await response.then();
+  }
+
   @override
-  Future<IResponseModel<User?, EmptyModel?>> signUp({
+  Future<IResponseModel<User?, AuthErrorModel?>> signUp({
     required String email,
     required String password,
   }) async {
     final user = User(email: email, password: password);
+
     final response = _networkManager.send<User, User>(
       NetworkServicePaths.signUp.value,
       parseModel: User(),
       method: RequestType.POST,
       data: user.toJson(),
     );
+
     return response;
   }
 

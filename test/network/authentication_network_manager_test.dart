@@ -1,6 +1,3 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter_test/flutter_test.dart';
 import 'package:food_fiesta/product/init/config/app_environment.dart';
 import 'package:food_fiesta/product/service/login_service.dart';
@@ -17,17 +14,14 @@ void main() {
     );
   });
 
-  test('api çalıştı', () async {
-    final response = await loginService.signUp(
-      email: 'mucahitsmsk@icloud.com',
-      password: '123456.*1aA_-',
-    );
+  test('api worked', () async {
+    await loginService.siginup();
 
-    final exp = jsonDecode(response.error!.description!) as Map<String, dynamic>;
+    // final authError = response.error;
 
-    log(response.data?.email.toString() ?? 'errordata');
-    log(response.error?.statusCode?.toString() ?? 'error');
-    log(response.error?.description ?? 'error');
+    // log(response.data?.email.toString() ?? 'errordata');
+    // log(response.error?.statusCode?.toString() ?? 'error');
+    // log(response.error?.description ?? 'error');
     // expect(response.data, isNotEmpty);
   });
 }
