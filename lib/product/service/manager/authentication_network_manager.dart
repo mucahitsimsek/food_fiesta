@@ -9,10 +9,9 @@ final class AuthenticationNetworkManager extends NetworkManager<AuthErrorModel> 
       : super(
           isEnableLogger: true,
           errorModel: AuthErrorModel(),
-          errorModelFromData: AuthErrorModel().fromJson,
           options: BaseOptions(
             baseUrl: AppEnvironmentItems.authUrl.value,
-            validateStatus: (status) => status! < 500,
+            // validateStatus: (status) => status! < 500,
           ),
         );
 }

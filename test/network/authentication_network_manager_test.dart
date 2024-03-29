@@ -15,7 +15,7 @@ void main() {
   });
 
   test('api worked', () async {
-    await loginService.siginup();
+    await loginService.signup();
 
     // final authError = response.error;
 
@@ -24,4 +24,23 @@ void main() {
     // log(response.error?.description ?? 'error');
     // expect(response.data, isNotEmpty);
   });
+
+  // test('Api test', () async {
+  //   final INetworkManager myNetworkManager = NetworkManager<EmptyModel>(
+  //     isEnableLogger: true,
+  //     options: BaseOptions(
+  //       baseUrl: 'https://jsonplaceholder.typicode.com/',
+  //     ),
+  //   );
+
+  //   final response = await myNetworkManager.send<EmptyModel, List<EmptyModel>>(
+  //     '/todos',
+  //     parseModel: EmptyModel(),
+  //     method: RequestType.GET,
+  //   );
+
+  //   log(response.data?.toString() ?? 'errordata');
+
+  //   expect(response, isNotNull);
+  // });
 }

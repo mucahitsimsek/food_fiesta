@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:food_fiesta/product/init/config/app_environment.dart';
 import 'package:food_fiesta/product/service/manager/authentication_network_manager.dart';
 import 'package:food_fiesta/product/service/manager/network_service_path.dart';
@@ -30,14 +32,7 @@ class LoginService {
     );
   }
 
-  // _networkManager.send<User, User>(
-  //       '${NetworkServicePaths.signUp.value}?key=${AppEnvironmentItems.apiKey.value}',
-  //       parseModel: User(),
-  //       method: RequestType.POST,
-  //       data: user.toJson(),
-  //     ),
-
-  Future<void> siginup() async {
+  Future<void> signup() async {
     final response = AuthResponseModel<User>(
       requestCallback: _networkManager.send<User, User>(
         NetworkServicePaths.signUp.value,
@@ -51,24 +46,25 @@ class LoginService {
     );
 
     await response.then();
+    log(response.error.toString());
   }
 
-  @override
-  Future<IResponseModel<User?, AuthErrorModel?>> signUp({
-    required String email,
-    required String password,
-  }) async {
-    final user = User(email: email, password: password);
+  // @override
+  // Future<IResponseModel<User?, AuthErrorModel?>> signUp({
+  //   required String email,
+  //   required String password,
+  // }) async {
+  //   final user = User(email: email, password: password);
 
-    final response = _networkManager.send<User, User>(
-      NetworkServicePaths.signUp.value,
-      parseModel: User(),
-      method: RequestType.POST,
-      data: user.toJson(),
-    );
+  //   final response = _networkManager.send<User, User>(
+  //     NetworkServicePaths.signUp.value,
+  //     parseModel: User(),
+  //     method: RequestType.POST,
+  //     data: user.toJson(),
+  //   );
 
-    return response;
-  }
+  //   return response;
+  // }
 
   @override
   Future<User> signIn(String email, String password) async {

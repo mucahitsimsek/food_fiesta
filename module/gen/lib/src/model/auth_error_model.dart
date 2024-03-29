@@ -1,108 +1,107 @@
+// ignore_for_file: public_member_api_docs
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:vexana/vexana.dart';
 
 part 'auth_error_model.g.dart';
 
-/// [AuthErrorModel] is a model class that is used to parse the error response
 @JsonSerializable()
-final class AuthErrorModel extends INetworkModel<AuthErrorModel>
-    with EquatableMixin {
-  /// [AuthErrorModel] is a model class that is used to parse the error response
+class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableMixin {
+
   AuthErrorModel({
-    this.code,
-    this.message,
-    this.status,
-    // this.errors,
+    this.error,
   });
 
-  /// [AuthErrorModel.fromJson] is a factory method that is used to parse the
-  /// JSON response
-
-  @JsonKey(name: 'code')
-
-  /// [code] is a variable that is used to store the code
-  final int? code;
-  @JsonKey(name: 'message')
-
-  /// [message] is a variable that is used to store the message
-  final String? message;
-  @JsonKey(name: 'status')
-
-  /// [status] is a variable that is used to store the status
-  final String? status;
-
-  // /// [errors] is a variable that is used to store the list of errors
-  // @JsonKey(name: 'errors')
-  // final List<Errors>? errors;
-
-  /// [toJson] is a method that is used to convert the model class to JSON
-  @override
-  Map<String, dynamic> toJson() => _$AuthErrorModelToJson(this);
+  factory AuthErrorModel.fromJson(Map<String, dynamic> json) =>
+      _$AuthErrorModelFromJson(json);
+  Error? error;
 
   @override
-  List<Object?> get props => [
-        code,
-        message,
-        status,
-        // errors,
-      ];
+  AuthErrorModel fromJson(Map<String, dynamic> json) =>
+      AuthErrorModel.fromJson(json);
 
   @override
-  AuthErrorModel fromJson(Map<String, dynamic> json) {
-    return _$AuthErrorModelFromJson(json);
-  }
+  Map<String, dynamic>? toJson() => _$AuthErrorModelToJson(this);
 
-  /// [copyWith] is a method that is used to copy the model class
+  @override
+  List<Object?> get props => [error];
+
   AuthErrorModel copyWith({
-    int? code,
-    String? message,
-    String? status,
-    List<Errors>? errors,
+    Error? error,
   }) {
     return AuthErrorModel(
-      code: code ?? this.code,
-      message: message ?? this.message,
-      status: status ?? this.status,
-      // errors: errors ?? this.errors,
+      error: error ?? this.error,
     );
   }
 }
 
-/// [AuthErrorModel] is a model class that is used to parse the error response
 @JsonSerializable()
-final class Errors with EquatableMixin {
-  /// [Errors] is a model class that is used to parse the error response
-  Errors({
-    this.domain,
+class Error extends INetworkModel<Error> with EquatableMixin {
+
+  Error({
+    this.code,
     this.message,
-    this.reason,
+    this.errors,
   });
 
-  /// [Errors.fromJson] is a factory method that is used to parse the
-  ///  JSON response
-  factory Errors.fromJson(Map<String, dynamic> json) => _$ErrorsFromJson(json);
-
-  @JsonKey(name: 'domain')
-
-  /// [domain] is a variable that is used to store the domain
-  final String? domain;
-  @JsonKey(name: 'message')
-
-  /// [message] is a variable that is used to store the message
-  final String? message;
-  @JsonKey(name: 'reason')
-
-  /// [reason] is a variable that is used to store the reason
-  final String? reason;
-
-  /// [toJson] is a method that is used to convert the model class to JSON
-  Map<String, dynamic> toJson() => _$ErrorsToJson(this);
+  factory Error.fromJson(Map<String, dynamic> json) => _$ErrorFromJson(json);
+  int? code;
+  String? message;
+  List<Errors>? errors;
 
   @override
-  List<Object?> get props => [
-        domain,
-        message,
-        reason,
-      ];
+  Error fromJson(Map<String, dynamic> json) => Error.fromJson(json);
+
+  @override
+  Map<String, dynamic>? toJson() => _$ErrorToJson(this);
+
+  @override
+  List<Object?> get props => [code, message, errors];
+
+  Error copyWith({
+    int? code,
+    String? message,
+    List<Errors>? errors,
+  }) {
+    return Error(
+      code: code ?? this.code,
+      message: message ?? this.message,
+      errors: errors ?? this.errors,
+    );
+  }
+}
+
+@JsonSerializable()
+class Errors extends INetworkModel<Errors> with EquatableMixin {
+  Errors({
+    this.message,
+    this.domain,
+    this.reason,
+  });
+  factory Errors.fromJson(Map<String, dynamic> json) => _$ErrorsFromJson(json);
+  String? message;
+  String? domain;
+  String? reason;
+
+  @override
+  Errors fromJson(Map<String, dynamic> json) => Errors.fromJson(json);
+
+  @override
+  Map<String, dynamic>? toJson() => _$ErrorsToJson(this);
+
+  @override
+  List<Object?> get props => [message, domain, reason];
+
+  Errors copyWith({
+    String? message,
+    String? domain,
+    String? reason,
+  }) {
+    return Errors(
+      message: message ?? this.message,
+      domain: domain ?? this.domain,
+      reason: reason ?? this.reason,
+    );
+  }
 }

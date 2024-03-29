@@ -27,8 +27,8 @@ final class AuthResponseModel<T> {
     if (myResponse.data != null) {
       data = myResponse.data;
     } else {
-      log('Error: ${myResponse.error?.description}');
       log('Error: ${myResponse.error?.model}');
+      error = myResponse.error?.model;
     }
 
     log('Data: $data');
