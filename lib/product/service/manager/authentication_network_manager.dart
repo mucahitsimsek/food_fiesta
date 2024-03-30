@@ -14,4 +14,20 @@ final class AuthenticationNetworkManager extends NetworkManager<AuthErrorModel> 
             baseUrl: AppEnvironmentItems.authUrl.value,
           ),
         );
+
+  void get listenErrorState {
+    interceptors.add(
+      InterceptorsWrapper(
+        onRequest: (options, handler) {
+          options.queryParameters.addAll(
+            {
+              'key': AppEnvironmentItems.apiKey.value,
+            },
+          );
+
+          return handler.next(options);
+        },
+      ),
+    );
+  }
 }

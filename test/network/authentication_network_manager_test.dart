@@ -18,7 +18,7 @@ void main() {
   test('signUp api test', () async {
     final request = await loginService.signUp(
       user: User(
-        email: 'mucahitasmsaka_1_@icloud.com',
+        email: 'mucahitsmsk@icloud.com',
         password: '123.*_0?aAa-',
       ),
     );
@@ -29,7 +29,7 @@ void main() {
     final request = await loginService.signIn(
       user: User(
         email: 'mucahitsmsk@icloud.com',
-        password: '123.*_0?aAa-*',
+        password: '123.*_0?aAa-',
       ),
     );
 
