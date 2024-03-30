@@ -1,4 +1,4 @@
-import 'dart:developer';
+// ignore_for_file: public_member_api_docs
 
 import 'package:gen/src/model/index.dart';
 import 'package:vexana/vexana.dart';
@@ -20,18 +20,23 @@ final class AuthResponseModel<T> {
 
   /// [AuthResponseModel] is a model class that is used to
   /// parse the response
-  Future<IResponseModel<T?, AuthErrorModel?>> requestCallback;
+  Future<IResponseModel<T?, AuthErrorModel?>> Function() requestCallback;
 
-  Future<void> then() async {
-    final myResponse = await requestCallback;
+  Future<AuthResponseModel<T>> response() async {
+    final authResponse = this;
+    final myResponse = await requestCallback.call().then((value) {
+      data = value.data;
+      error = value.error?.model;
+      return value;
+    });
+
     if (myResponse.data != null) {
       data = myResponse.data;
+      authResponse.data = myResponse.data;
     } else {
-      log('Error: ${myResponse.error?.model}');
       error = myResponse.error?.model;
+      authResponse.error = myResponse.error?.model;
     }
-
-    log('Data: $data');
-    log('Error: $error');
+    return authResponse;
   }
 }

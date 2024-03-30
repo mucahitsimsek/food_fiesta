@@ -1,11 +1,12 @@
+import 'package:gen/gen.dart';
 
-
-// ///auth operation interface
-// abstract class AuthanticationOperation {
-//   Future<User> signIn(String email, String password);
-//   Future<IResponseModel<User?, EmptyModel?>> signUp({
-//     required String email,
-//     required String password,
-//   });
-//   Future<void> signOut();
-// }
+///auth operation interface
+abstract class AuthtenticationOperation {
+  Future<AuthResponseModel<User>> signIn({
+    required User user,
+  });
+  Future<AuthResponseModel<User?>> signUp({
+    required User user,
+  });
+  Future<void> signOut();
+}

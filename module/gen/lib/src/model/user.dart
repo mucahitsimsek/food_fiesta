@@ -1,83 +1,57 @@
+import 'package:vexana/vexana.dart';
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:vexana/vexana.dart';
-
 part 'user.g.dart';
 
-/// User model
 @JsonSerializable()
-final class User extends INetworkModel<User> with EquatableMixin {
-  ///User constructor
+class User extends INetworkModel<User> with EquatableMixin {
+  String? kind;
+  String? idToken;
+  String? email;
+  String? refreshToken;
+  String? expiresIn;
+  String? localId;
+  String? password;
+
   User({
-    this.email,
-    this.name,
-    this.password,
-    this.phoneNumber,
+    this.kind,
     this.idToken,
+    this.email,
     this.refreshToken,
+    this.expiresIn,
     this.localId,
+    this.password,
   });
 
-  ///User email
-  final String? email;
+  @override
+  User fromJson(Map<String, dynamic> json) => User.fromJson(json);
 
-  ///User name
-  final String? name;
-
-  ///User password
-  final String? password;
-
-  ///User phone number
-  final String? phoneNumber;
-
-  ///User id token
-  final String? idToken;
-
-  ///User refresh token
-  final String? refreshToken;
-
-  ///User local id
-  final String? localId;
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   @override
-  List<Object?> get props => [
-        email,
-        name,
-        password,
-        phoneNumber,
-        idToken,
-        refreshToken,
-        localId,
-      ];
+  Map<String, dynamic>? toJson() => _$UserToJson(this);
 
-  ///Copy with method
+  @override
+  List<Object?> get props =>
+      [kind, idToken, email, refreshToken, expiresIn, localId];
+
   User copyWith({
-    String? email,
-    String? name,
-    String? password,
-    String? phoneNumber,
+    String? kind,
     String? idToken,
+    String? email,
     String? refreshToken,
+    String? expiresIn,
     String? localId,
+    String? password,
   }) {
     return User(
-      email: email ?? this.email,
-      name: name ?? this.name,
-      password: password ?? this.password,
-      phoneNumber: phoneNumber ?? this.phoneNumber,
+      kind: kind ?? this.kind,
       idToken: idToken ?? this.idToken,
+      email: email ?? this.email,
       refreshToken: refreshToken ?? this.refreshToken,
+      expiresIn: expiresIn ?? this.expiresIn,
       localId: localId ?? this.localId,
+      password: password ?? this.password,
     );
-  }
-  
-  @override
-  User fromJson(Map<String, dynamic> json) {
-    return _$UserFromJson(json);
-  }
-  
-  @override
-  Map<String, dynamic>? toJson() {
-    return _$UserToJson(this);
   }
 }
