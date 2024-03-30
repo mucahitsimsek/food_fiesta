@@ -3,4 +3,4 @@
 
 Running image:
 
-[Cache Image](cache_image.png)
+![Cache Image](cache_image.png)
