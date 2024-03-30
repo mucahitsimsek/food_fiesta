@@ -5,6 +5,7 @@ import 'package:easy_logger/easy_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:food_fiesta/product/init/config/app_environment.dart';
+import 'package:food_fiesta/product/state/container/index.dart';
 import 'package:food_fiesta/product/state/container/product_state_container.dart';
 import 'package:kartal/kartal.dart';
 import 'package:logger/logger.dart';
@@ -40,5 +41,7 @@ final class AppInitialize {
 
     /// Is must be after call AppEnvironment.general()
     ProductStateContainer.setup();
+
+    await ProductStateItems.productCache.initCache();
   }
 }
