@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/cache/product_cache.dart';
 import 'package:food_fiesta/product/service/manager/authentication_network_manager.dart';
 import 'package:food_fiesta/product/service/manager/product_network_manager.dart';
 import 'package:food_fiesta/product/state/container/product_state_items.dart';
@@ -14,4 +15,6 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> {
 
   ///AuthenticationNetworkManager
   AuthenticationNetworkManager get authNetworkManager => ProductStateItems.authNetworkManager;
+
+  ProductCahe get productCache => ProductStateItems.productCache;
 }
