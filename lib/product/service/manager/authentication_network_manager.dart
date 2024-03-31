@@ -22,6 +22,7 @@ final class AuthenticationNetworkManager extends NetworkManager<AuthErrorModel> 
           options.queryParameters.addAll(
             {
               'key': AppEnvironmentItems.apiKey.value,
+              'print': 'pretty',
             },
           );
 

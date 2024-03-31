@@ -5,3 +5,12 @@ extension CenterWidgetExt on Widget {
         child: this,
       );
 }
+
+extension ScalerWidget on Widget {
+  Widget scale(double factor) {
+    return Transform.scale(
+      scale: factor,
+      child: this,
+    );
+  }
+}

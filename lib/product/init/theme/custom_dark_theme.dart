@@ -8,8 +8,6 @@ final class CustomDarkTheme implements CustomTheme {
   // change to initialize ThemeData instead of computed
   ThemeData get themeData => ThemeData(
         useMaterial3: true,
-        // colorScheme: CustomColorScheme.darkColorScheme,
-        // floatingActionButtonTheme: floatingActionButtonThemeData,
       );
 
   @override
@@ -17,7 +15,6 @@ final class CustomDarkTheme implements CustomTheme {
       const FloatingActionButtonThemeData();
 
   @override
-  // implement elevatedButtonThemeData
   ElevatedButtonThemeData get elevatedButtonThemeData => const ElevatedButtonThemeData();
 
   @override
@@ -25,4 +22,7 @@ final class CustomDarkTheme implements CustomTheme {
 
   @override
   InputDecorationTheme get inputDecorationTheme => const InputDecorationTheme();
+
+  @override
+  TextButtonThemeData get textButtonThemeData => throw UnimplementedError();
 }

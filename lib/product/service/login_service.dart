@@ -5,7 +5,7 @@ import 'package:gen/gen.dart';
 import 'package:vexana/vexana.dart';
 
 ///LoginService is a network manager class for product
-class LoginService extends AuthtenticationOperation {
+final class LoginService extends AuthtenticationOperation {
   ///LoginService is a network manager class for product
   LoginService({required AuthenticationNetworkManager networkManager})
       : _networkManager = networkManager {

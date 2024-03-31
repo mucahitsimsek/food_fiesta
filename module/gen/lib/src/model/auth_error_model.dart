@@ -8,13 +8,17 @@ part 'auth_error_model.g.dart';
 
 @JsonSerializable()
 class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableMixin {
-
   AuthErrorModel({
     this.error,
   });
 
   factory AuthErrorModel.fromJson(Map<String, dynamic> json) =>
       _$AuthErrorModelFromJson(json);
+
+  factory AuthErrorModel.empty() => AuthErrorModel(
+        error: Error(),
+      );
+
   Error? error;
 
   @override
@@ -38,7 +42,6 @@ class AuthErrorModel extends INetworkModel<AuthErrorModel> with EquatableMixin {
 
 @JsonSerializable()
 class Error extends INetworkModel<Error> with EquatableMixin {
-
   Error({
     this.code,
     this.message,

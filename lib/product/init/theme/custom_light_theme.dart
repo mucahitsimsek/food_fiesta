@@ -10,33 +10,12 @@ final class CustomLightTheme implements CustomTheme {
   @override
   ThemeData get themeData => ThemeData(
         useMaterial3: true,
-        // colorScheme: CustomColorScheme.lightColorScheme,
         fontFamily: Assets.fonts.sfproBold,
         floatingActionButtonTheme: floatingActionButtonThemeData,
         elevatedButtonTheme: elevatedButtonThemeData,
         textTheme: textTheme,
         inputDecorationTheme: inputDecorationTheme,
-        textButtonTheme: TextButtonThemeData(
-          style: ButtonStyle(
-            // backgroundColor: MaterialStateProperty.all(ColorName.accentColor),
-            padding: MaterialStateProperty.all(
-              EdgeInsets.symmetric(
-                horizontal: AppValues.small.value,
-                vertical: AppValues.extraSmall.value,
-              ),
-            ),
-
-            overlayColor: MaterialStatePropertyAll(
-              ColorName.activeColorOne.withOpacity(0.1),
-            ),
-            visualDensity: VisualDensity.comfortable,
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-          ),
-        ),
+        textButtonTheme: textButtonThemeData,
       );
 
   @override
@@ -94,10 +73,33 @@ final class CustomLightTheme implements CustomTheme {
         ),
         focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
-            color: ColorName.mainColorBlack,
+            color: ColorName.activeColorOne,
           ),
         ),
         fillColor: ColorName.activeColorOne.withOpacity(0.1),
         focusColor: ColorName.mainColorBlack,
+      );
+
+  @override
+  TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
+        style: ButtonStyle(
+          // backgroundColor: MaterialStateProperty.all(ColorName.accentColor),
+          padding: MaterialStateProperty.all(
+            EdgeInsets.symmetric(
+              horizontal: AppValues.small.value,
+              vertical: AppValues.extraSmall.value,
+            ),
+          ),
+
+          overlayColor: MaterialStatePropertyAll(
+            ColorName.activeColorOne.withOpacity(0.1),
+          ),
+          visualDensity: VisualDensity.comfortable,
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+        ),
       );
 }

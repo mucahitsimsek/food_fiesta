@@ -16,4 +16,7 @@ abstract class CustomTheme {
 
   ///InputDecoration [ThemeData] for the app.
   InputDecorationTheme get inputDecorationTheme;
+
+  ///TextButton [ThemeData] for the app.
+  TextButtonThemeData get textButtonThemeData;
 }

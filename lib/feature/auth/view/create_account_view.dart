@@ -52,10 +52,12 @@ class _CreateAccountViewState extends State<CreateAccountView> {
             const AppGap.small(),
             EmailTextField(
               formKey: _emailFormKey,
+              emailController: TextEditingController(),
             ),
             const AppGap.small(),
             PasswordTextField(
               passwordFormKey: _passwordFormKey,
+              passwordController: TextEditingController(),
             ),
             const AppGap.small(),
             const AppButton(

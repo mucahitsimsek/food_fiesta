@@ -23,7 +23,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      title: widget.title != null ? Text(widget.title ?? '').tr() : null,
+      title: widget.title != null ? Text(widget.title?.tr() ?? '') : null,
       centerTitle: true,
       leading: IconButton(
         onPressed: () => context.maybePop(),

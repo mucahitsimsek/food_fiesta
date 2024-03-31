@@ -61,7 +61,34 @@
         "getStartedWithFoodFiesta": "Food Fiesta ile Başla",
         "getStartedDescription": "Hemen başlamak için telefon numaranızı girin. Afiyet olsun :)",
         "phoneNumber": "Telefon Numarası",
-        "signUp": "Kayıt Ol"
+        "signUp": "Kayıt Ol",
+        "error": {
+            "email": "Geçerli bir email adresi girin",
+            "password": "Şifreniz en az 6 karakter olmalıdır",
+            "phoneNumber": "Geçerli bir telefon numarası girin",
+            "name": "Adınızı ve soyadınızı girin",
+            "acceptTerms": "Kullanıcı sözleşmesini kabul etmelisiniz",
+            "required": "Bu alan boş bırakılamaz",
+            "invalid": "Geçersiz değer",
+            "reset": "Şifre sıfırlama e-postası gönderilemedi",
+            "login": "Giriş yapılamadı",
+            "register": "Kayıt olunamadı",
+            "resetPassword": "Şifre sıfırlanamadı",
+            "phoneNumberExist": "Bu telefon numarası zaten kullanılmakta",
+            "facebook": "Facebook ile giriş yapılamadı",
+            "google": "Google ile giriş yapılamadı",
+            "server": "Sunucu hatası",
+            "unknown": "Bilinmeyen hata",
+            "userNotFound": "Kullanıcı bulunamadı",
+            "wrongPassword": "Yanlış şifre",
+            "userDisabled": "Kullanıcı devre dışı bırakıldı",
+            "tooManyRequests": "Çok fazla istek",
+            "operationNotAllowed": "İşlem izin verilmedi",
+            "invalidEmail": "Geçersiz email adresi",
+            "emailAlreadyInUse": "Email adresi zaten kullanılmakta",
+            "weakPassword": "Zayıf şifre",
+            "requiresRecentLogin": "Yeniden giriş yapmanız gerekmekte"
+        }
     },
     "home": {
         "title": "Anasayfa"

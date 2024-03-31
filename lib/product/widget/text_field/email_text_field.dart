@@ -9,9 +9,15 @@ import 'package:kartal/kartal.dart';
 class EmailTextField extends StatefulWidget {
   const EmailTextField({
     required this.formKey,
+    required this.emailController,
     super.key,
   });
+
+  ///This is the key for the form
   final GlobalKey<FormState> formKey;
+
+  ///This is the controller for the email text field
+  final TextEditingController emailController;
   @override
   State<EmailTextField> createState() => _EmailTextFieldState();
 }
@@ -25,6 +31,7 @@ class _EmailTextFieldState extends State<EmailTextField> {
       valueListenable: _isVisibleDone,
       builder: (context, visible, child) => AppTextField(
         formKey: widget.formKey,
+        controller: widget.emailController,
         hintText: LocaleKeys.signIn_email.tr(),
         validator: (value) {
           _isVisibleDone.value = false;

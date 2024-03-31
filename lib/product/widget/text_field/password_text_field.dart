@@ -7,10 +7,12 @@ import 'package:food_fiesta/product/widget/text_field/app_text_field.dart';
 class PasswordTextField extends StatefulWidget {
   const PasswordTextField({
     required this.passwordFormKey,
+    required this.passwordController,
     super.key,
   });
 
   final GlobalKey<FormState> passwordFormKey;
+  final TextEditingController passwordController;
 
   @override
   State<PasswordTextField> createState() => _PasswordTextFieldState();
@@ -21,6 +23,7 @@ class _PasswordTextFieldState extends State<PasswordTextField> {
   Widget build(BuildContext context) {
     return AppTextField(
       formKey: widget.passwordFormKey,
+      controller: widget.passwordController,
       hintText: LocaleKeys.signIn_password.tr(),
       obscureText: true,
       validator: AuthValidators.passwordValidator,

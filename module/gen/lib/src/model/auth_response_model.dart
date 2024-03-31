@@ -11,8 +11,10 @@ final class AuthResponseModel<T> {
   /// [AuthResponseModel] is a model class that
   /// is used to parse the response
   AuthResponseModel({
-    required this.requestCallback,
+    this.requestCallback,
   });
+
+  factory AuthResponseModel.empty() => AuthResponseModel<T>();
 
   T? data;
 
@@ -20,11 +22,14 @@ final class AuthResponseModel<T> {
 
   /// [AuthResponseModel] is a model class that is used to
   /// parse the response
-  Future<IResponseModel<T?, AuthErrorModel?>> Function() requestCallback;
+  Future<IResponseModel<T?, AuthErrorModel?>> Function()? requestCallback;
 
   Future<AuthResponseModel<T>> response() async {
+    if (requestCallback == null) {
+      throw Exception('Request callback is null');
+    }
     final authResponse = this;
-    final myResponse = await requestCallback.call().then((value) {
+    final myResponse = await requestCallback!.call().then((value) {
       data = value.data;
       error = value.error?.model;
       return value;

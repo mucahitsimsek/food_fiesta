@@ -41,7 +41,10 @@ class _ForgotPasswordViewState extends State<ForgotPasswordView> {
               textAlign: TextAlign.left,
             ),
             const AppGap.small(),
-            EmailTextField(formKey: _emailFormKey),
+            EmailTextField(
+              formKey: _emailFormKey,
+              emailController: TextEditingController(),
+            ),
             const AppGap.small(),
             AppButton(
               title: LocaleKeys.signIn_reset,
