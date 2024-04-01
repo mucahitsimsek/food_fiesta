@@ -14,6 +14,27 @@ I chose this ready-made template because it is designed in a way that is conduci
 
 <!-- Last Page View: ![Last Page](last_page.png) -->
 
-UI&UX View of the Last Completed Page:
+#UI views I created for account creation and Login:
 
- ![Gif](last_page.gif)
+![SignIn](/screenshots/sign_in.gif) ![SignUp](/screenshots/sign_up.gif)   
+
+#Introduction view is below:
+
+![SignIn](/screenshots/introduction.gif)
+
+
+## Contact Me
+
+Hello! If you have any questions about my project, feedback, or just want to say hi, feel free to reach out to me. Here's how you can get in touch:
+
+- **Email:** [My Email Address](mailto:mucahitsmsk74@gmail.com)
+  - You can send any questions or feedback directly to my email.
+
+- **GitHub Issues:** [Project Issues Page](https://github.com/mucahitsimsek/food_fiesta/issues/issues)
+  - Found a bug in my project? You can report issues or suggest improvements through GitHub Issues.
+  
+[I have a question](https://github.com/mucahitsimsek/food_fiesta/issues/new)
+
+- **Social Media:**
+  - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mucahit-simsek/)
+
