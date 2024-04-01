@@ -87,7 +87,8 @@
             "invalidEmail": "Geçersiz email adresi",
             "emailAlreadyInUse": "Email adresi zaten kullanılmakta",
             "weakPassword": "Zayıf şifre",
-            "requiresRecentLogin": "Yeniden giriş yapmanız gerekmekte"
+            "requiresRecentLogin": "Yeniden giriş yapmanız gerekmekte",
+            "invalidLoginCredentials": "Geçersiz giriş bilgileri"
         }
     },
     "home": {

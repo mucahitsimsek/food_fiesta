@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:equatable/equatable.dart';
 import 'package:food_fiesta/product/cache/model/user_cache_model.dart';
@@ -29,27 +27,36 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   final _userCache = ProductStateItems.productCache.userCacheOperation;
 
   Future<void> _signIn(User user) async {
-    emitState(state.copyWith(isLoading: true));
+    emitState(
+      state.copyWith(
+        isLoading: true,
+        signInSuccess: false,
+        signUpSuccess: false,
+        error: Error(),
+      ),
+    );
     final signInResponse = await _loginService.signIn(
       user: user,
     );
 
     if (signInResponse.error != null) {
-      log('Error: ${signInResponse.error?.error}');
       emitState(
         state.copyWith(
           isLoading: false,
-          isSuccessful: false,
+          signInSuccess: false,
+          signUpSuccess: false,
           error: signInResponse.error?.error,
         ),
       );
       return;
     }
     if (signInResponse.data == null) {
+      addError(ErrorMessages.userNotFound.value.tr());
       emitState(
         state.copyWith(
           isLoading: false,
-          isSuccessful: false,
+          signInSuccess: false,
+          signUpSuccess: false,
           error: Error(
             message: ErrorMessages.userNotFound.value.tr(),
           ),
@@ -68,7 +75,8 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
         state.copyWith(
           isLoading: false,
           error: Error(),
-          isSuccessful: true,
+          signInSuccess: true,
+          signUpSuccess: false,
           authResponseModel: signInResponse,
         ),
       );
@@ -79,15 +87,60 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
   }
 
   Future<void> _signUp(User user) async {
+    emitState(
+      state.copyWith(
+        isLoading: true,
+        signInSuccess: false,
+        signUpSuccess: false,
+        error: Error(),
+      ),
+    );
     final signUpResponse = await _loginService.signUp(
       user: user,
     );
 
     if (signUpResponse.error != null) {
-      emitState(state.copyWith(isLoading: false));
+      emitState(
+        state.copyWith(
+          isLoading: false,
+          signInSuccess: false,
+          signUpSuccess: false,
+          error: signUpResponse.error?.error,
+        ),
+      );
+      return;
+    }
+    if (signUpResponse.data == null) {
+      addError(ErrorMessages.userNotFound.value.tr());
+      emitState(
+        state.copyWith(
+          isLoading: false,
+          signInSuccess: false,
+          signUpSuccess: false,
+          error: Error(
+            message: ErrorMessages.userNotFound.value.tr(),
+          ),
+        ),
+      );
+      return;
+    }
+    if (signUpResponse.data != null) {
+      emitState(
+        state.copyWith(
+          isLoading: false,
+          error: Error(),
+          signInSuccess: false,
+          signUpSuccess: true,
+          authResponseModel: signUpResponse,
+        ),
+      );
       return;
     }
 
-    return;
+    emitState(
+      state.copyWith(
+        isLoading: false,
+      ),
+    );
   }
 }

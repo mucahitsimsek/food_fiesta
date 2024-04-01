@@ -78,6 +78,7 @@ abstract class  LocaleKeys {
   static const signIn_error_emailAlreadyInUse = 'signIn.error.emailAlreadyInUse';
   static const signIn_error_weakPassword = 'signIn.error.weakPassword';
   static const signIn_error_requiresRecentLogin = 'signIn.error.requiresRecentLogin';
+  static const signIn_error_invalidLoginCredentials = 'signIn.error.invalidLoginCredentials';
   static const signIn_error = 'signIn.error';
   static const signIn = 'signIn';
   static const home_title = 'home.title';

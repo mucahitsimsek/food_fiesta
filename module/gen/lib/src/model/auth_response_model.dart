@@ -25,15 +25,31 @@ final class AuthResponseModel<T> {
   Future<IResponseModel<T?, AuthErrorModel?>> Function()? requestCallback;
 
   Future<AuthResponseModel<T>> response() async {
-    if (requestCallback == null) {
-      throw Exception('Request callback is null');
-    }
     final authResponse = this;
-    final myResponse = await requestCallback!.call().then((value) {
+    if (requestCallback == null) {
+      authResponse.error = AuthErrorModel(
+        error: Error(
+          code: 501,
+          message: 'Response is null',
+        ),
+      );
+      return authResponse;
+    }
+    final myResponse = await requestCallback?.call().then((value) {
       data = value.data;
       error = value.error?.model;
       return value;
     });
+
+    if (myResponse == null) {
+      authResponse.error = AuthErrorModel(
+        error: Error(
+          code: 501,
+          message: 'Response is null',
+        ),
+      );
+      return authResponse;
+    }
 
     if (myResponse.data != null) {
       data = myResponse.data;

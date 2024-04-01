@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/init/config/app_environment.dart';
 import 'package:vexana/vexana.dart';
 
@@ -15,16 +12,4 @@ final class ProductNetworkManager extends NetworkManager<EmptyModel> {
             baseUrl: AppEnvironmentItems.baseUrl.value,
           ),
         );
-
-  ///Error handling
-  void listenErrorState({required ValueChanged<int> onValueChanged}) {
-    interceptors.add(
-      InterceptorsWrapper(
-        onError: (error, handler) {
-          onValueChanged(error.response?.statusCode ?? HttpStatus.notFound);
-          return handler.next(error);
-        },
-      ),
-    );
-  }
 }

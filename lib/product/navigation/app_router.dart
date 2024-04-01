@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:food_fiesta/feature/auth/view/create_account_view.dart';
 import 'package:food_fiesta/feature/auth/view/forgot_password_view.dart';
 import 'package:food_fiesta/feature/auth/view/reset_email_sent_view.dart';
 import 'package:food_fiesta/feature/auth/view/sign_in_view.dart';
+import 'package:food_fiesta/feature/auth/view/sign_up_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
 import 'package:food_fiesta/product/navigation/app_routes.dart';
@@ -45,8 +45,8 @@ class AppRouter extends _$AppRouter {
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
         CustomRoute(
-          page: CreateAccountRoute.page,
-          path: AppRoutes.createAccountView.path,
+          page: SignUpRoute.page,
+          path: AppRoutes.signUpView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];

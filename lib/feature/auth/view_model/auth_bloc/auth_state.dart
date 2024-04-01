@@ -5,7 +5,8 @@ final class AuthState extends Equatable {
     this.authResponseModel,
     this.error,
     this.isLoading = false,
-    this.isSuccessful = false,
+    this.signInSuccess = false,
+    this.signUpSuccess = false,
   });
 
   factory AuthState.initial() {
@@ -15,19 +16,22 @@ final class AuthState extends Equatable {
   final AuthResponseModel<User>? authResponseModel;
   final Error? error;
   final bool isLoading;
-  final bool isSuccessful;
+  final bool signInSuccess;
+  final bool signUpSuccess;
 
   AuthState copyWith({
     AuthResponseModel<User>? authResponseModel,
     Error? error,
     bool? isLoading,
-    bool? isSuccessful,
+    bool? signInSuccess,
+    bool? signUpSuccess,
   }) {
     return AuthState(
       authResponseModel: authResponseModel ?? this.authResponseModel,
       error: error ?? this.error,
       isLoading: isLoading ?? this.isLoading,
-      isSuccessful: isSuccessful ?? this.isSuccessful,
+      signInSuccess: signInSuccess ?? this.signInSuccess,
+      signUpSuccess: signUpSuccess ?? this.signUpSuccess,
     );
   }
 
@@ -36,6 +40,7 @@ final class AuthState extends Equatable {
         authResponseModel ?? AuthResponseModel<void>.empty(),
         isLoading,
         error ?? Error(),
-        isSuccessful,
+        signInSuccess,
+        signUpSuccess,
       ];
 }

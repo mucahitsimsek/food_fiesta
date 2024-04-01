@@ -24,9 +24,9 @@ enum AppRoutes {
     ResetEmailSentRoute(),
   ),
 
-  createAccountView(
+  signUpView(
     '/createAccountRoute',
-    CreateAccountRoute(),
+    SignUpRoute(),
   ),
   ;
 

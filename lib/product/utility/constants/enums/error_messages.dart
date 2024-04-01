@@ -8,6 +8,8 @@ enum ErrorMessages {
   emailAlreadyExists(LocaleKeys.signIn_error_emailAlreadyInUse),
   weakPassword(LocaleKeys.signIn_error_weakPassword),
   unknownError(LocaleKeys.signIn_error_unknown),
+  tooManyRequest(LocaleKeys.signIn_error_tooManyRequests),
+  invalidLoginCredentials(LocaleKeys.signIn_error_invalidLoginCredentials),
   ;
 
   const ErrorMessages(this.value);

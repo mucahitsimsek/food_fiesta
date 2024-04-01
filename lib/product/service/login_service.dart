@@ -19,7 +19,7 @@ final class LoginService extends AuthtenticationOperation {
   }
 
   @override
-  Future<AuthResponseModel<User?>> signUp({required User user}) async => AuthResponseModel<User?>(
+  Future<AuthResponseModel<User>> signUp({required User user}) async => AuthResponseModel<User>(
         requestCallback: () => _networkManager.send<User, User>(
           NetworkServicePaths.signUp.value,
           parseModel: User(),

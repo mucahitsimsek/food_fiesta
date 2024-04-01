@@ -10,6 +10,7 @@ import 'package:food_fiesta/product/init/theme/custom_dark_theme.dart';
 import 'package:food_fiesta/product/init/theme/custom_light_theme.dart';
 import 'package:food_fiesta/product/navigation/app_router.dart';
 import 'package:food_fiesta/product/state/view_model/product_viev_model.dart';
+import 'package:food_fiesta/product/utility/project_manager.dart';
 
 void main() async {
   await AppInitialize().make();
@@ -30,6 +31,7 @@ final class _MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      scaffoldMessengerKey: ProjectManager.messengerkey,
       routerConfig: _appRotuer.config(),
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,

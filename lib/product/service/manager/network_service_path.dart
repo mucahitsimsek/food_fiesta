@@ -5,6 +5,9 @@ enum NetworkServicePaths {
 
   ///SignIN service path
   signIn('signInWithPassword'),
+
+  ///Users service path
+  users('users'),
   ;
 
   const NetworkServicePaths(this.value);

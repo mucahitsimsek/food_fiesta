@@ -1,6 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:food_fiesta/feature/auth/view_model/auth_bloc/auth_bloc.dart';
 import 'package:food_fiesta/product/init/language/locale_keys.g.dart';
+import 'package:food_fiesta/product/utility/bottom_sheet/custom_buttom_sheet.dart';
+import 'package:food_fiesta/product/utility/errors/auth_error_handler.dart';
 import 'package:food_fiesta/product/widget/app_column.dart';
 import 'package:food_fiesta/product/widget/appbar/custom_appbar.dart';
 import 'package:food_fiesta/product/widget/button/app_button.dart';
@@ -13,19 +17,19 @@ import 'package:food_fiesta/product/widget/text/title_text.dart';
 import 'package:food_fiesta/product/widget/text_field/app_text_field.dart';
 import 'package:food_fiesta/product/widget/text_field/email_text_field.dart';
 import 'package:food_fiesta/product/widget/text_field/password_text_field.dart';
+import 'package:gen/gen.dart';
+
+part 'mixins/sign_up_view_mixin.dart';
 
 @RoutePage()
-class CreateAccountView extends StatefulWidget {
-  const CreateAccountView({super.key});
+class SignUpView extends StatefulWidget {
+  const SignUpView({super.key});
 
   @override
-  State<CreateAccountView> createState() => _CreateAccountViewState();
+  State<SignUpView> createState() => _SignUpViewState();
 }
 
-class _CreateAccountViewState extends State<CreateAccountView> {
-  final _emailFormKey = GlobalKey<FormState>();
-  final _passwordFormKey = GlobalKey<FormState>();
-
+class _SignUpViewState extends State<SignUpView> with _SignUpViewMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,7 +47,7 @@ class _CreateAccountViewState extends State<CreateAccountView> {
             OnTapRichText(
               title: LocaleKeys.signIn_createAccount_description,
               description: LocaleKeys.signIn_createAccount_subTitle,
-              onTap: () {},
+              onTap: () => context.maybePop(),
             ),
             const AppGap.small(),
             const AppTextField(
@@ -52,17 +56,15 @@ class _CreateAccountViewState extends State<CreateAccountView> {
             const AppGap.small(),
             EmailTextField(
               formKey: _emailFormKey,
-              emailController: TextEditingController(),
+              emailController: _emailController,
             ),
             const AppGap.small(),
             PasswordTextField(
               passwordFormKey: _passwordFormKey,
-              passwordController: TextEditingController(),
+              passwordController: _passwordController,
             ),
             const AppGap.small(),
-            const AppButton(
-              title: LocaleKeys.signIn_createAccount_button_signUp,
-            ),
+            _signUpButton(),
             const AppGap.small(),
             const TitleText(
               text: LocaleKeys.signIn_createAccount_subDescription,
@@ -80,6 +82,33 @@ class _CreateAccountViewState extends State<CreateAccountView> {
           ],
         ),
       ),
+    );
+  }
+
+  BlocConsumer<AuthBloc, AuthState> _signUpButton() {
+    return BlocConsumer<AuthBloc, AuthState>(
+      listener: (context, state) {
+        if (state.signUpSuccess) {
+          CustomButtomSheet.show(
+            context: context,
+            child: Assets.lottie.signUpSuccessAnim.lottie(
+              repeat: false,
+            ),
+          );
+        }
+        if (state.error?.message != null) {
+          AuthErrorHandler.handleAuthError(
+            state.error?.message,
+          );
+        }
+      },
+      builder: (context, state) {
+        return AppButton(
+          title: LocaleKeys.signIn_createAccount_button_signUp,
+          onPressed: _signUp,
+          hasLoading: state.isLoading,
+        );
+      },
     );
   }
 }

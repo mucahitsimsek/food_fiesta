@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/utility/constants/enums/app_values.dart';
+import 'package:food_fiesta/product/utility/extensions/widget_ext.dart';
 import 'package:kartal/kartal.dart';
 
 class AppButton extends StatefulWidget {
@@ -12,6 +13,7 @@ class AppButton extends StatefulWidget {
     this.color,
     this.leftWidget,
     this.rightWidget,
+    this.hasLoading = false,
     super.key,
   });
 
@@ -28,6 +30,8 @@ class AppButton extends StatefulWidget {
   final Widget? leftWidget;
 
   final Widget? rightWidget;
+
+  final bool hasLoading;
 
   @override
   State<AppButton> createState() => _AppButtonState();
@@ -52,13 +56,15 @@ class _AppButtonState extends State<AppButton> {
                       )
                     : null,
               ),
-              child: Text(
-                widget.title.tr().toUpperCase(),
-                style: TextStyle(
-                  fontSize: AppValues.semiMedium.value,
-                  color: Colors.white,
-                ),
-              ),
+              child: widget.hasLoading
+                  ? const CircularProgressIndicator.adaptive().scale(0.8)
+                  : Text(
+                      widget.title.tr().toUpperCase(),
+                      style: TextStyle(
+                        fontSize: AppValues.semiMedium.value,
+                        color: Colors.white,
+                      ),
+                    ),
             ),
           ),
           if (widget.leftWidget != null)

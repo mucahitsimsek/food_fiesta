@@ -86,7 +86,8 @@
             "invalidEmail": "Invalid email address",
             "emailAlreadyInUse": "Email already in use",
             "weakPassword": "Weak password",
-            "requiresRecentLogin": "Requires recent login"
+            "requiresRecentLogin": "Requires recent login",
+            "invalidLoginCredentials": "Invalid login credentials"
         }
     },
     "home": {
