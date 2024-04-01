@@ -15,11 +15,11 @@ I chose this ready-made template because it is designed in a way that is conduci
 
 <!-- Last Page View: ![Last Page](last_page.png) -->
 
-#UI views I created for account creation and Login:
+# UI views I created for account creation and Login:
 
 ![SignIn](/screenshots/sign_in.gif) ![SignUp](/screenshots/sign_up.gif)   
 
-#Introduction view is below:
+# Introduction view is below:
 
 ![SignIn](/screenshots/introduction.gif)
 
