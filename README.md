@@ -33,9 +33,8 @@ Hello! If you have any questions about my project, feedback, or just want to say
 
 - **GitHub Issues:** [Project Issues Page](https://github.com/mucahitsimsek/food_fiesta/issues/issues)
   - Found a bug in my project? You can report issues or suggest improvements through GitHub Issues.
-  
-[I have a question](https://github.com/mucahitsimsek/food_fiesta/issues/new)
 
 - **Social Media:**
   - LinkedIn: [LinkedIn](https://www.linkedin.com/in/mucahit-simsek/)
 
+# [I have a question](https://github.com/mucahitsimsek/food_fiesta/issues/new)
