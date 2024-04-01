@@ -10,7 +10,8 @@ I chose this ready-made template because it is designed in a way that is conduci
 
 - UI should be created efficiently and performantly.
 - Bloc Pattern will be preferred for State Management.
-- For backend development, consideration and selection among Firebase, Node.JS, ASP.NET, and GO options are necessary.
+- <s>For backend development, consideration and selection among Firebase, Node.JS, ASP.NET, and GO options are necessary.</s>
+  - Firebase Realtime Database was selected for database, and Firebase Auth was selected for auth. Developments will be built with Firebase REST API.
 
 <!-- Last Page View: ![Last Page](last_page.png) -->
 
