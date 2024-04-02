@@ -7,7 +7,7 @@ enum NetworkServicePaths {
   signIn('signInWithPassword'),
 
   ///Users service path
-  users('users'),
+  usersPatch('/users/'),
   ;
 
   const NetworkServicePaths(this.value);
@@ -15,6 +15,8 @@ enum NetworkServicePaths {
   ///Service path value
   final String value;
 
+  String withJson({required String query}) => '$value/$query.json';
+
   ///Service path with query
-  String withQuery({String? query}) => query != null ? '$value?$query' : value;
+  String withQuery({required String query}) => '$value?$query';
 }

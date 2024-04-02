@@ -51,7 +51,6 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
       return;
     }
     if (signInResponse.data == null) {
-      addError(ErrorMessages.userNotFound.value.tr());
       emitState(
         state.copyWith(
           isLoading: false,
@@ -111,7 +110,6 @@ class AuthBloc extends BaseBloc<AuthEvent, AuthState> {
       return;
     }
     if (signUpResponse.data == null) {
-      addError(ErrorMessages.userNotFound.value.tr());
       emitState(
         state.copyWith(
           isLoading: false,
