@@ -1,6 +1,5 @@
 import 'package:food_fiesta/product/init/config/app_environment.dart';
 import 'package:food_fiesta/product/state/container/index.dart';
-import 'package:food_fiesta/product/utility/constants/enums/storage_keys.dart';
 import 'package:gen/gen.dart';
 import 'package:vexana/vexana.dart';
 
@@ -19,15 +18,15 @@ final class ProductNetworkManager extends NetworkManager<BaseErrorModel> {
 
   void get listenErrorState {
     final userOperation = ProductStateItems.productCache.userCacheOperation;
-    final cachedUser = userOperation.get(StorageKeys.user.name);
+    // final cachedUser = userOperation.get(StorageKeys.user.name);
 
     interceptors.add(
       InterceptorsWrapper(
         onRequest: (options, handler) {
           options.queryParameters.addAll(
             {
-              'auth': cachedUser?.user?.idToken,
-              'print': 'pretty',
+              // 'auth': cachedUser?.user?.idToken,
+              // 'print': 'pretty',
             },
           );
 

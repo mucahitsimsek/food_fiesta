@@ -1,18 +1,18 @@
-import 'package:vexana/vexana.dart';
+// ignore_for_file: public_member_api_docs
+
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
+import 'package:vexana/vexana.dart';
+
 part 'user.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(
+  includeIfNull: false,
+  fieldRename: FieldRename.none,
+  anyMap: true,
+  checked: true,
+)
 class User extends INetworkModel<User> with EquatableMixin {
-  String? kind;
-  String? idToken;
-  String? email;
-  String? refreshToken;
-  String? expiresIn;
-  String? localId;
-  String? password;
-
   User({
     this.kind,
     this.idToken,
@@ -21,19 +21,40 @@ class User extends INetworkModel<User> with EquatableMixin {
     this.expiresIn,
     this.localId,
     this.password,
+    this.name,
+    this.age,
   });
+
+  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  String? kind;
+  String? idToken;
+  String? email;
+  String? refreshToken;
+  String? expiresIn;
+  String? localId;
+  String? password;
+  String? name;
+  int? age;
 
   @override
   User fromJson(Map<String, dynamic> json) => User.fromJson(json);
-
-  factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   @override
   Map<String, dynamic>? toJson() => _$UserToJson(this);
 
   @override
-  List<Object?> get props =>
-      [kind, idToken, email, refreshToken, expiresIn, localId];
+  List<Object?> get props => [
+        kind,
+        idToken,
+        email,
+        refreshToken,
+        expiresIn,
+        localId,
+        password,
+        name,
+        age,
+      ];
 
   User copyWith({
     String? kind,
@@ -43,6 +64,8 @@ class User extends INetworkModel<User> with EquatableMixin {
     String? expiresIn,
     String? localId,
     String? password,
+    String? name,
+    int? age,
   }) {
     return User(
       kind: kind ?? this.kind,
@@ -52,6 +75,8 @@ class User extends INetworkModel<User> with EquatableMixin {
       expiresIn: expiresIn ?? this.expiresIn,
       localId: localId ?? this.localId,
       password: password ?? this.password,
+      name: name ?? this.name,
+      age: age ?? this.age,
     );
   }
 }

@@ -1,3 +1,4 @@
+
 import 'package:gen/gen.dart';
 import 'package:vexana/vexana.dart';
 
@@ -19,6 +20,12 @@ final class BaseResponseModel<T> extends _$BaseResponseModel {
     required IResponseModel<T?, BaseErrorModel?> request,
   }) =>
       _$BaseResponseModel.getResponse(request);
+
+  ///[BaseResponseModel.sendPrimitiveRequest] is a factory method that is used
+    factory BaseResponseModel.sendPrimitiveRequest({
+    required T? request,
+  }) =>
+      _$BaseResponseModel.getPrimitiveResponse(request);
 
   ///[data] is the response data from the server.
   final T? data;

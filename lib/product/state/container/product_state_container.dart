@@ -20,7 +20,9 @@ final class ProductStateContainer {
       ..registerSingleton<AuthenticationNetworkManager>(AuthenticationNetworkManager.auth())
       ..registerSingleton<ProductCahe>(
         ProductCahe(
-          cacheManager: HiveCacheManager(),
+          cacheManager: HiveCacheManager(
+            path: '/test',
+          ),
         ),
       )
       ..registerLazySingleton<ProductViewModel>(
