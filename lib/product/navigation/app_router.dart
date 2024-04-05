@@ -3,6 +3,7 @@ import 'package:food_fiesta/feature/auth/view/forgot_password_view.dart';
 import 'package:food_fiesta/feature/auth/view/reset_email_sent_view.dart';
 import 'package:food_fiesta/feature/auth/view/sign_in_view.dart';
 import 'package:food_fiesta/feature/auth/view/sign_up_view.dart';
+import 'package:food_fiesta/feature/home/view/home_page_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
 import 'package:food_fiesta/product/navigation/app_routes.dart';
@@ -47,6 +48,11 @@ class AppRouter extends _$AppRouter {
         CustomRoute(
           page: SignUpRoute.page,
           path: AppRoutes.signUpView.path,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: HomePageRoute.page,
+          path: AppRoutes.homePageView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];

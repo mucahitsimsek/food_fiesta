@@ -1,4 +1,4 @@
-import 'package:food_fiesta/product/service/interface/authantication_operation.dart';
+import 'package:food_fiesta/product/service/interface/authentication_operation.dart';
 import 'package:food_fiesta/product/service/manager/authentication_network_manager.dart';
 import 'package:food_fiesta/product/service/manager/product_network_paths.dart';
 import 'package:gen/gen.dart';

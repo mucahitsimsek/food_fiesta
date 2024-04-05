@@ -28,7 +28,11 @@ enum AppRoutes {
     '/createAccountRoute',
     SignUpRoute(),
   ),
-  ;
+
+  homePageView(
+    '/homePageView',
+    HomePageRoute(),
+  );
 
   const AppRoutes(
     this.path,

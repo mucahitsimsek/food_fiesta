@@ -84,15 +84,18 @@ class _SignInViewtate extends State<SignInView> with _SignInViewMixin {
 
   BlocConsumer<AuthBloc, AuthState> _signInButton() {
     return BlocConsumer<AuthBloc, AuthState>(
-      listener: (context, state) {
+      listener: (context, state) async {
         if (state.signInSuccess) {
-          CustomButtomSheet.show(
-            context: context,
-            child: Assets.lottie.signInSuccessAnim.lottie(
-              repeat: false,
+          await context.navigateNamedTo(AppRoutes.homePageView.path);
+          Future.delayed(
+            Durations.long4,
+            () => CustomButtomSheet.show(
+              context: context,
+              child: Assets.lottie.signInSuccessAnim.lottie(
+                repeat: false,
+              ),
             ),
           );
-          // context.navigateNamedTo(AppRoutes.homeView.path);
         }
         if (state.error?.message != null) {
           AuthErrorHandler.handleAuthError(state.error?.message);

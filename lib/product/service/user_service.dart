@@ -18,7 +18,7 @@ final class UserService implements UserOperation {
   }
 
   void _init() {
-    _productNetworkManager.listenErrorState;
+    _productNetworkManager.listenErrorState();
   }
 
   late final ProductNetworkManager _productNetworkManager;
@@ -44,18 +44,18 @@ final class UserService implements UserOperation {
   @override
   Future<BaseResponseModel<User>> createUser({
     required String userId,
-    required String token,
     required User user,
+    required String token,
   }) async =>
       BaseResponseModel.sendRequest(
         request: await _productNetworkManager.send<User, User>(
           ProductNetworkPaths.usersPatch.withJson(
             query: userId,
           ),
-          parseModel: User(),
           queryParameters: {
             'auth': token,
           },
+          parseModel: User(),
           data: user.toJson(),
           method: RequestType.PATCH,
         ),

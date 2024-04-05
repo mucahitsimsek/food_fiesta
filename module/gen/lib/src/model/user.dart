@@ -23,6 +23,7 @@ class User extends INetworkModel<User> with EquatableMixin {
     this.password,
     this.name,
     this.age,
+    this.returnSecureToken = true,
   });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
@@ -36,6 +37,7 @@ class User extends INetworkModel<User> with EquatableMixin {
   String? password;
   String? name;
   int? age;
+  bool returnSecureToken;
 
   @override
   User fromJson(Map<String, dynamic> json) => User.fromJson(json);
