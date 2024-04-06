@@ -7,15 +7,16 @@ import 'package:food_fiesta/feature/home/view/home_page_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
 import 'package:food_fiesta/product/navigation/app_routes.dart';
-import 'package:logger/logger.dart';
+import 'package:food_fiesta/product/navigation/guards/auth_guard.dart';
 
 part 'app_router.gr.dart';
 
 ///App navigation router
 @AutoRouterConfig(replaceInRouteName: AppRouter._replaceRouteName)
-class AppRouter extends _$AppRouter {
+class AppRouter extends _$AppRouter
+// implements AutoRouteGuard
+{
   static const _replaceRouteName = 'View,Route';
-  final logger = Logger();
 
   @override
   List<AutoRoute> get routes => [
@@ -23,6 +24,9 @@ class AppRouter extends _$AppRouter {
           page: WelcomeRoute.page,
           type: const RouteType.adaptive(),
           path: AppRoutes.welcomeView.path,
+          guards: [
+            AuthGuard(),
+          ],
           initial: true,
         ),
         CustomRoute(
@@ -56,4 +60,17 @@ class AppRouter extends _$AppRouter {
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];
+
+  // @override
+  // void onNavigation(NavigationResolver resolver, StackRouter router) {
+  //   final userCache = ProductStateItems.productCache.userCacheOperation;
+  //   late final cachedUser = userCache.get(StorageKeys.user.name);
+  //   if (cachedUser?.user != null) {
+  //     resolver
+  //       ..next(false)
+  //       ..redirect(AppRoutes.welcomeView.route).then((value) => resolver.next());
+  //   } else {
+  //     resolver.next();
+  //   }
+  // }
 }

@@ -30,15 +30,20 @@ final class AppInitialize {
 
     await DeviceUtility.instance.initPackageInfo();
 
-    FlutterError.onError = (FlutterErrorDetails details) {
-      Logger().e(details.exceptionAsString());
-    };
-
     //Dependency Injection
     //Envied
 
     AppEnvironment.general();
 
+    /// Is must be after call AppEnvironment.general()
+    await _productState();
+
+    FlutterError.onError = (FlutterErrorDetails details) {
+      Logger().e(details.exceptionAsString());
+    };
+  }
+
+  Future<void> _productState() async {
     /// Is must be after call AppEnvironment.general()
     ProductStateContainer.setup();
 

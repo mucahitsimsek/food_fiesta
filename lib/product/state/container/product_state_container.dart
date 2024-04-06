@@ -16,13 +16,13 @@ final class ProductStateContainer {
   ///Product core required network manager
   static void setup() {
     _getIt
-      ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
-      ..registerSingleton<AuthenticationNetworkManager>(AuthenticationNetworkManager.auth())
       ..registerSingleton<ProductCahe>(
         ProductCahe(
           cacheManager: HiveCacheManager(),
         ),
       )
+      ..registerSingleton<ProductNetworkManager>(ProductNetworkManager.base())
+      ..registerSingleton<AuthenticationNetworkManager>(AuthenticationNetworkManager.auth())
       ..registerLazySingleton<ProductViewModel>(
         ProductViewModel.new,
       );

@@ -25,12 +25,14 @@ class _CustomAppBarState extends State<CustomAppBar> {
     return AppBar(
       title: widget.title != null ? Text(widget.title?.tr() ?? '') : null,
       centerTitle: true,
-      leading: IconButton(
-        onPressed: () => context.maybePop(),
-        icon: Assets.icons.backIcon.svg(
-          height: AppValues.large.value,
-        ),
-      ),
+      leading: context.router.canPop()
+          ? IconButton(
+              onPressed: () => context.maybePop(),
+              icon: Assets.icons.backIcon.svg(
+                height: AppValues.large.value,
+              ),
+            )
+          : null,
       iconTheme: const IconThemeData(
         color: Colors.black,
       ),
