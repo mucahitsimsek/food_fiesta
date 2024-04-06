@@ -1,5 +1,5 @@
 # Food Fiesta
-I will strive to have all the content I learn in Flutter in this repository.
+
 
 # Figma
 [Advance to Figma](https://www.figma.com/file/LQhk53Zfj03aOg6Z2Y1OMg/Food-App?type=design&node-id=0-1&mode=design&t=4mlpn1vqkTgpjQtf-0)
