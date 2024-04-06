@@ -1,6 +1,26 @@
 # FOOD FIESTA
 
-
+**USED PACKAGES** 
+- CORE:
+  - equatable: 2.0.5 
+  - get_it: 7.6.7
+- **State:**
+  - bloc: 8.1.4 
+  - flutter_bloc: 8.1.5
+- **Config:**
+  - easy_localization: 3.0.3
+- **Network:**
+  - vexana: 3.5.4 
+- **Navigation:**
+  - auto_route: 7.8.4
+- **Utils:**
+  - google_fonts: 6.1.0 
+  - kartal: 3.4.4 
+  - easy_logger: 0.0.2 
+  - logger: 2.0.2+1 
+- **More**:
+  -  Please look /modules  
+  
 # Figma
 [Advance to Figma](https://www.figma.com/file/LQhk53Zfj03aOg6Z2Y1OMg/Food-App?type=design&node-id=0-1&mode=design&t=4mlpn1vqkTgpjQtf-0)
 
