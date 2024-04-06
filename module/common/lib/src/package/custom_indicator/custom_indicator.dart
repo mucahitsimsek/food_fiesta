@@ -28,6 +28,11 @@ final class CustomIndicator extends StatelessWidget {
       controller: controller,
       effect: effect.chose(context),
       count: pageCount,
+      onDotClicked: (index) => controller.animateToPage(
+        index,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.ease,
+      ),
     );
   }
 }
