@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:common/common.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:food_fiesta/product/init/language/locale_keys.g.dart';
@@ -10,7 +11,6 @@ import 'package:food_fiesta/product/widget/logo_widget.dart';
 import 'package:food_fiesta/product/widget/padding/app_padding.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 part './mixins/introduction_view_mixin.dart';
 
@@ -42,13 +42,10 @@ class _IntroductionViewState extends State<IntroductionView> with IntroductionVi
                 physics: const BouncingScrollPhysics(),
               ),
             ),
-            SmoothPageIndicator(
+            CustomIndicator(
               controller: _pageController,
-              count: pageCount,
-              effect: ExpandingDotsEffect(
-                activeDotColor: ColorName.green,
-                dotHeight: context.sized.height * 0.01,
-              ),
+              pageCount: pageCount,
+              effect: Effect.expandingDotsEffect,
             ),
             ValueListenableBuilder(
               valueListenable: _isLastPage,
