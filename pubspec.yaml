@@ -44,7 +44,7 @@ dependencies:
   kartal: ^3.4.4
   easy_logger: ^0.0.2
   logger: ^2.0.2+1
-  smooth_page_indicator: ^1.1.0
+  geolocator: ^11.0.0
   
 dev_dependencies:
   build_runner: ^2.4.6

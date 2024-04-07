@@ -30,7 +30,9 @@ final class CustomIndicator extends StatelessWidget {
       count: pageCount,
       onDotClicked: (index) => controller.animateToPage(
         index,
-        duration: const Duration(milliseconds: 500),
+        duration: const Duration(
+          milliseconds: 500,
+        ),
         curve: Curves.ease,
       ),
     );
