@@ -33,6 +33,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const IntroductionView(),
       );
     },
+    LocationTestRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const LocationTestView(),
+      );
+    },
     ResetEmailSentRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
@@ -98,6 +104,20 @@ class IntroductionRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'IntroductionRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [LocationTestView]
+class LocationTestRoute extends PageRouteInfo<void> {
+  const LocationTestRoute({List<PageRouteInfo>? children})
+      : super(
+          LocationTestRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'LocationTestRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

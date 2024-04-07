@@ -6,6 +6,7 @@ import 'package:food_fiesta/feature/auth/view/sign_up_view.dart';
 import 'package:food_fiesta/feature/home/view/home_page_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
+import 'package:food_fiesta/feature/tests/view/location_test_view.dart';
 import 'package:food_fiesta/product/navigation/app_routes.dart';
 import 'package:food_fiesta/product/navigation/guards/auth_guard.dart';
 
@@ -57,6 +58,11 @@ class AppRouter extends _$AppRouter
         CustomRoute(
           page: HomePageRoute.page,
           path: AppRoutes.homePageView.path,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
+          page: LocationTestRoute.page,
+          path: AppRoutes.locationTestView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
       ];

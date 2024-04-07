@@ -18,6 +18,8 @@
   - kartal: 3.4.4 
   - easy_logger: 0.0.2 
   - logger: 2.0.2+1 
+- **Location:**
+  - geolocator: 11.0.0
 - **More**:
   -  Please look /modules  
   
@@ -46,6 +48,10 @@ I chose this ready-made template because it is designed in a way that is conduci
 # Users Db 
 
 ![Users Db](/screenshots/users_db.png)
+
+# Location 
+
+![Location Gif](/screenshots/location_test.gif)![Location Image](/screenshots/location_test_image.png)
 
 ## Contact Me
 

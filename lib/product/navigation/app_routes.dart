@@ -32,7 +32,13 @@ enum AppRoutes {
   homePageView(
     '/homePageView',
     HomePageRoute(),
-  );
+  ),
+
+  locationTestView(
+    '/locationTestView',
+    LocationTestRoute(),
+  ),
+  ;
 
   const AppRoutes(
     this.path,

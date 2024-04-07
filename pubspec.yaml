@@ -44,6 +44,8 @@ dependencies:
   kartal: ^3.4.4
   easy_logger: ^0.0.2
   logger: ^2.0.2+1
+
+  #Location
   geolocator: ^11.0.0
   
 dev_dependencies:
