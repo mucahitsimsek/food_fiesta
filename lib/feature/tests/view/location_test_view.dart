@@ -14,11 +14,37 @@ class LocationTestView extends StatefulWidget {
 }
 
 class _LocationTestViewState extends State<LocationTestView> {
-  final currentLoc = AppLocation.getDeterminePosition();
-  ValueNotifier<String> currentPosition = ValueNotifier('Test');
-
   @override
   Widget build(BuildContext context) {
+    // return Scaffold(
+    //   body: Stack(
+    //     children: [
+    //       FlutterMap(
+    //         mapController: mapController,
+    //         options: MapOptions(
+    //           // initialCenter: _initLocation,
+    //           initialCameraFit: CameraFit.coordinates(
+    //             coordinates: [_initLocation],
+    //           ),
+    //         ),
+    //         children: [
+    //           TileLayer(
+    //             urlTemplate: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    //             userAgentPackageName: 'com.app.food-fiesta-app',
+    //             maxZoom: 10,
+    //             minZoom: 2,
+    //             zoomOffset: -1,
+    //             tileDisplay: const TileDisplay.instantaneous(),
+    //           ),
+    //         ],
+    //       ),
+    //     ],
+    //   ),
+    // );
+
+    final currentLoc = AppLocation.getDeterminePosition();
+    final currentPosition = ValueNotifier<String>('Test');
+
     return Scaffold(
       body: AppColumn(
         mainAxisAlignment: MainAxisAlignment.center,

@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:food_fiesta/product/navigation/app_routes.dart';
 import 'package:food_fiesta/product/state/container/product_state_items.dart';
 import 'package:food_fiesta/product/utility/constants/enums/storage_keys.dart';
 
@@ -17,7 +16,7 @@ class AuthGuard extends AutoRouteGuard {
     //   resolver.next();
     // }
 
-    router.push(AppRoutes.locationTestView.route);
-    // resolver.next();
+    // router.push(AppRoutes.locationTestView.route);
+    resolver.next();
   }
 }

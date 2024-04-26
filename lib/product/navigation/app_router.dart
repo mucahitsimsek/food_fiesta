@@ -41,6 +41,11 @@ class AppRouter extends _$AppRouter
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
         CustomRoute(
+          page: SignUpRoute.page,
+          path: AppRoutes.signUpView.path,
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        ),
+        CustomRoute(
           page: ForgotPasswordRoute.page,
           path: AppRoutes.forgotPasswordView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
@@ -48,11 +53,6 @@ class AppRouter extends _$AppRouter
         CustomRoute(
           page: ResetEmailSentRoute.page,
           path: AppRoutes.resetEmailSentView.path,
-          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
-        ),
-        CustomRoute(
-          page: SignUpRoute.page,
-          path: AppRoutes.signUpView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
         CustomRoute(

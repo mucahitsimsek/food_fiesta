@@ -10,6 +10,10 @@ enum AppRoutes {
     '/signInView',
     SignInRoute(),
   ),
+  signUpView(
+    '/signUpView',
+    SignUpRoute(),
+  ),
   forgotPasswordView(
     '/forgotPasswordView',
     ForgotPasswordRoute(),
@@ -22,11 +26,6 @@ enum AppRoutes {
   resetEmailSentView(
     '/resetEmailSentRoute',
     ResetEmailSentRoute(),
-  ),
-
-  signUpView(
-    '/createAccountRoute',
-    SignUpRoute(),
   ),
 
   homePageView(

@@ -118,8 +118,8 @@ class _SignInViewtate extends State<SignInView> with _SignInViewMixin {
         TitleText(text: LocaleKeys.signIn_dontHaveAccount.tr()),
         const AppGap.small(),
         AppTextButton(
-          onPressed: () => context.navigateNamedTo(
-            AppRoutes.signUpView.path,
+          onPressed: () => context.pushRoute(
+            AppRoutes.signInView.route.initialChildren?.first ?? AppRoutes.signUpView.route,
           ),
           title: LocaleKeys.signIn_createAccount_title.tr(),
           color: ColorName.accentColor,
