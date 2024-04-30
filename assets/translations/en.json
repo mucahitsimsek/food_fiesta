@@ -12,7 +12,9 @@
                 "title": "Version",
                 "message": "Version Info"
             }
-        }
+        },
+        "filter": "Filter",
+        "seeAll": "See All"
     },
     "welcome": {
         "title": "Welcome to Food Fiesta",

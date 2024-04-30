@@ -28,14 +28,31 @@ enum AppRoutes {
     ResetEmailSentRoute(),
   ),
 
-  homePageView(
-    '/homePageView',
-    HomePageRoute(),
-  ),
-
   locationTestView(
     '/locationTestView',
     LocationTestRoute(),
+  ),
+
+  mainView(
+    '/mainView',
+    MainRoute(),
+  ),
+
+  homePageView(
+    'homePageView',
+    HomePageRoute(),
+  ),
+  searchMainRoute(
+    'searchMainRoute',
+    SearchMainRoute(),
+  ),
+  searchView(
+    'searchView',
+    SearchRoute(),
+  ),
+  searchDetailView(
+    'searchDetailView',
+    SearchDetailRoute(),
   ),
   ;
 

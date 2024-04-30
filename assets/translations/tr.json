@@ -12,7 +12,9 @@
                 "title": "Versiyon",
                 "message": "Versiyon Bilgisi"
             }
-        }
+        },
+        "filter": "Filtre",
+        "seeAll": "Hepsini Gör"
     },
     "welcome": {
         "title": "Food Fiesta'ya Hoş geldiniz",

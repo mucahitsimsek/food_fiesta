@@ -39,10 +39,34 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const LocationTestView(),
       );
     },
+    MainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const MainView(),
+      );
+    },
     ResetEmailSentRoute.name: (routeData) {
       return AutoRoutePage<dynamic>(
         routeData: routeData,
         child: const ResetEmailSentView(),
+      );
+    },
+    SearchDetailRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SearchDetailView(),
+      );
+    },
+    SearchMainRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SearchMainView(),
+      );
+    },
+    SearchRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SearchView(),
       );
     },
     SignInRoute.name: (routeData) {
@@ -123,6 +147,20 @@ class LocationTestRoute extends PageRouteInfo<void> {
 }
 
 /// generated route for
+/// [MainView]
+class MainRoute extends PageRouteInfo<void> {
+  const MainRoute({List<PageRouteInfo>? children})
+      : super(
+          MainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'MainRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
 /// [ResetEmailSentView]
 class ResetEmailSentRoute extends PageRouteInfo<void> {
   const ResetEmailSentRoute({List<PageRouteInfo>? children})
@@ -132,6 +170,48 @@ class ResetEmailSentRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'ResetEmailSentRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchDetailView]
+class SearchDetailRoute extends PageRouteInfo<void> {
+  const SearchDetailRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchDetailRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchDetailRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchMainView]
+class SearchMainRoute extends PageRouteInfo<void> {
+  const SearchMainRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchMainRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchMainRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [SearchView]
+class SearchRoute extends PageRouteInfo<void> {
+  const SearchRoute({List<PageRouteInfo>? children})
+      : super(
+          SearchRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'SearchRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -6,6 +6,10 @@ import 'package:food_fiesta/feature/auth/view/sign_up_view.dart';
 import 'package:food_fiesta/feature/home/view/home_page_view.dart';
 import 'package:food_fiesta/feature/introduction/view/introduction_view.dart';
 import 'package:food_fiesta/feature/introduction/view/welcome_view.dart';
+import 'package:food_fiesta/feature/main/main_view.dart';
+import 'package:food_fiesta/feature/search/search_main_view.dart';
+import 'package:food_fiesta/feature/search/sub_view/search_detail_view.dart';
+import 'package:food_fiesta/feature/search/view/search_view.dart';
 import 'package:food_fiesta/feature/tests/view/location_test_view.dart';
 import 'package:food_fiesta/product/navigation/app_routes.dart';
 import 'package:food_fiesta/product/navigation/guards/auth_guard.dart';
@@ -29,6 +33,32 @@ class AppRouter extends _$AppRouter
             AuthGuard(),
           ],
           initial: true,
+        ),
+        CustomRoute(
+          page: MainRoute.page,
+          path: AppRoutes.mainView.path,
+          children: [
+            AutoRoute(
+              page: HomePageRoute.page,
+              path: AppRoutes.homePageView.path,
+            ),
+            AutoRoute(
+              page: SearchMainRoute.page,
+              path: AppRoutes.searchMainRoute.path,
+              children: [
+                AutoRoute(
+                  page: SearchRoute.page,
+                  path: AppRoutes.searchView.path,
+                  initial: true,
+                ),
+                AutoRoute(
+                  page: SearchDetailRoute.page,
+                  path: AppRoutes.searchDetailView.path,
+                ),
+              ],
+            ),
+          ],
+          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
         CustomRoute(
           page: IntroductionRoute.page,
@@ -55,11 +85,11 @@ class AppRouter extends _$AppRouter
           path: AppRoutes.resetEmailSentView.path,
           transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
         ),
-        CustomRoute(
-          page: HomePageRoute.page,
-          path: AppRoutes.homePageView.path,
-          transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
-        ),
+        // CustomRoute(
+        //   page: HomePageRoute.page,
+        //   path: AppRoutes.homePageView.path,
+        //   transitionsBuilder: TransitionsBuilders.slideLeftWithFade,
+        // ),
         CustomRoute(
           page: LocationTestRoute.page,
           path: AppRoutes.locationTestView.path,

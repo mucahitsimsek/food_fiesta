@@ -6,6 +6,8 @@ class AppScaffold extends StatelessWidget {
     required this.body,
     this.hasAppBar = true,
     this.appBarText,
+    this.appBarBottom,
+    this.appBarTextColor,
     super.key,
   });
 
@@ -18,6 +20,9 @@ class AppScaffold extends StatelessWidget {
   ///This is the text that will be displayed on the [AppBar]
   final String? appBarText;
 
+  final PreferredSizeWidget? appBarBottom;
+
+  final Color? appBarTextColor;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +37,8 @@ class AppScaffold extends StatelessWidget {
     if (hasAppBar && appBarText != null) {
       return CustomAppBar(
         title: appBarText,
+        bottom: appBarBottom,
+        textColor: appBarTextColor,
       );
     } else if (hasAppBar) {
       return const CustomAppBar();

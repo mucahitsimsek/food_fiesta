@@ -10,6 +10,8 @@ abstract class  LocaleKeys {
   static const general_dialog_version_message = 'general.dialog.version.message';
   static const general_dialog_version = 'general.dialog.version';
   static const general_dialog = 'general.dialog';
+  static const general_filter = 'general.filter';
+  static const general_seeAll = 'general.seeAll';
   static const general = 'general';
   static const welcome_title = 'welcome.title';
   static const welcome_message = 'welcome.message';
