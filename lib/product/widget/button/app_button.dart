@@ -51,7 +51,7 @@ class _AppButtonState extends State<AppButton> {
               onLongPress: widget.onLongPress,
               style: ButtonStyle(
                 backgroundColor: widget.color != null
-                    ? MaterialStateProperty.all<Color>(
+                    ? WidgetStateProperty.all<Color>(
                         widget.color!,
                       )
                     : null,

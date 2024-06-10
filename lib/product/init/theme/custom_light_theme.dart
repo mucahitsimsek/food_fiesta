@@ -21,18 +21,18 @@ final class CustomLightTheme implements CustomTheme {
   @override
   ElevatedButtonThemeData get elevatedButtonThemeData => ElevatedButtonThemeData(
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(
+          backgroundColor: WidgetStateProperty.all<Color>(
             ColorName.activeColorOne,
           ),
-          elevation: MaterialStateProperty.all<double>(0),
-          shape: MaterialStateProperty.all<OutlinedBorder>(
+          elevation: WidgetStateProperty.all<double>(0),
+          shape: WidgetStateProperty.all<OutlinedBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(
                 AppValues.smallBig.value,
               ),
             ),
           ),
-          textStyle: MaterialStateProperty.all<TextStyle>(
+          textStyle: WidgetStateProperty.all<TextStyle>(
             TextStyle(
               color: ColorName.backgroundColor,
               fontSize: AppValues.medium.value,
@@ -84,18 +84,18 @@ final class CustomLightTheme implements CustomTheme {
   TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
         style: ButtonStyle(
           // backgroundColor: MaterialStateProperty.all(ColorName.accentColor),
-          padding: MaterialStateProperty.all(
+          padding: WidgetStateProperty.all(
             EdgeInsets.symmetric(
               horizontal: AppValues.small.value,
               vertical: AppValues.extraSmall.value,
             ),
           ),
 
-          overlayColor: MaterialStatePropertyAll(
+          overlayColor: WidgetStatePropertyAll(
             ColorName.activeColorOne.withOpacity(0.1),
           ),
           visualDensity: VisualDensity.comfortable,
-          shape: MaterialStateProperty.all(
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),
             ),
