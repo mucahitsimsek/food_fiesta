@@ -10,6 +10,10 @@ final class ProdEnv implements AppConfiguration {
   @EnviedField(varName: 'BASE_URL')
   static final String _baseUrl = _ProdEnv._baseUrl;
 
+  ///Project auth url
+  @EnviedField(varName: 'AUTH_URL')
+  static final String _authUrl = _ProdEnv._authUrl;
+
   ///Project api key
   @EnviedField(varName: 'API_KEY')
   static final String _apiKey = _ProdEnv._apiKey;
@@ -21,4 +25,7 @@ final class ProdEnv implements AppConfiguration {
   ///Project api key
   @override
   String get apiKey => _apiKey;
+  
+  @override
+  String get authUrl => _authUrl;
 }

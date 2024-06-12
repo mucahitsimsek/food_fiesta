@@ -4,5 +4,8 @@ abstract class AppConfiguration {
   String get baseUrl;
 
   ///it view using from network manager
+  String get authUrl;
+
+  ///it view using from network manager
   String get apiKey;
 }

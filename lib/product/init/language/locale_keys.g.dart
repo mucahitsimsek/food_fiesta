@@ -1,6 +1,6 @@
 // DO NOT EDIT. This is code generated via package:easy_localization/generate.dart
 
-abstract class LocaleKeys {
+abstract class  LocaleKeys {
   static const logo_title = 'logo.title';
   static const logo = 'logo';
   static const general_button_save = 'general.button.save';
@@ -10,6 +10,8 @@ abstract class LocaleKeys {
   static const general_dialog_version_message = 'general.dialog.version.message';
   static const general_dialog_version = 'general.dialog.version';
   static const general_dialog = 'general.dialog';
+  static const general_filter = 'general.filter';
+  static const general_seeAll = 'general.seeAll';
   static const general = 'general';
   static const welcome_title = 'welcome.title';
   static const welcome_message = 'welcome.message';
@@ -36,6 +38,7 @@ abstract class LocaleKeys {
   static const signIn_forgotPassword = 'signIn.forgotPassword';
   static const signIn_forgotDescription = 'signIn.forgotDescription';
   static const signIn_dontHaveAccount = 'signIn.dontHaveAccount';
+  static const signIn_havingProblem = 'signIn.havingProblem';
   static const signIn_or = 'signIn.or';
   static const signIn_reset = 'signIn.reset';
   static const signIn_resetDescription = 'signIn.resetDescription';
@@ -52,7 +55,35 @@ abstract class LocaleKeys {
   static const signIn_getStartedDescription = 'signIn.getStartedDescription';
   static const signIn_phoneNumber = 'signIn.phoneNumber';
   static const signIn_signUp = 'signIn.signUp';
+  static const signIn_error_email = 'signIn.error.email';
+  static const signIn_error_password = 'signIn.error.password';
+  static const signIn_error_phoneNumber = 'signIn.error.phoneNumber';
+  static const signIn_error_name = 'signIn.error.name';
+  static const signIn_error_acceptTerms = 'signIn.error.acceptTerms';
+  static const signIn_error_required = 'signIn.error.required';
+  static const signIn_error_invalid = 'signIn.error.invalid';
+  static const signIn_error_reset = 'signIn.error.reset';
+  static const signIn_error_login = 'signIn.error.login';
+  static const signIn_error_register = 'signIn.error.register';
+  static const signIn_error_resetPassword = 'signIn.error.resetPassword';
+  static const signIn_error_phoneNumberExist = 'signIn.error.phoneNumberExist';
+  static const signIn_error_facebook = 'signIn.error.facebook';
+  static const signIn_error_google = 'signIn.error.google';
+  static const signIn_error_server = 'signIn.error.server';
+  static const signIn_error_unknown = 'signIn.error.unknown';
+  static const signIn_error_userNotFound = 'signIn.error.userNotFound';
+  static const signIn_error_wrongPassword = 'signIn.error.wrongPassword';
+  static const signIn_error_userDisabled = 'signIn.error.userDisabled';
+  static const signIn_error_tooManyRequests = 'signIn.error.tooManyRequests';
+  static const signIn_error_operationNotAllowed = 'signIn.error.operationNotAllowed';
+  static const signIn_error_invalidEmail = 'signIn.error.invalidEmail';
+  static const signIn_error_emailAlreadyInUse = 'signIn.error.emailAlreadyInUse';
+  static const signIn_error_weakPassword = 'signIn.error.weakPassword';
+  static const signIn_error_requiresRecentLogin = 'signIn.error.requiresRecentLogin';
+  static const signIn_error_invalidLoginCredentials = 'signIn.error.invalidLoginCredentials';
+  static const signIn_error = 'signIn.error';
   static const signIn = 'signIn';
   static const home_title = 'home.title';
   static const home = 'home';
+
 }

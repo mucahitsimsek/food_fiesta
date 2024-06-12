@@ -9,4 +9,7 @@
     <color name="green">#22A45D</color>
     <color name="red">#FF7058</color>
     <color name="yellow">#FFD15C</color>
+    <color name="google">#395998</color>
+    <color name="facebook">#4285F4</color>
+
 </resources>

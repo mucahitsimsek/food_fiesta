@@ -1,5 +1,5 @@
-import 'package:architecture_template/product/widget/padding/app_padding.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/widget/padding/app_padding.dart';
 
 /// Padding attributes for the MY APP
 final class AppGap extends Padding {

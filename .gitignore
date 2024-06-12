@@ -61,9 +61,6 @@ app.*.map.json
 
 /pubspec.lock
 
-/lib/product/init/language
-
-
 # Android Studio will place build artifacts here
 /android/app/build/
 /android/app/debug/

@@ -12,7 +12,9 @@
                 "title": "Version",
                 "message": "Version Info"
             }
-        }
+        },
+        "filter": "Filter",
+        "seeAll": "See All"
     },
     "welcome": {
         "title": "Welcome to Food Fiesta",
@@ -42,6 +44,7 @@
         "forgotPassword": "Forgot Password?",
         "forgotDescription": "Enter your email address and we will send you a reset instructions.",
         "dontHaveAccount": "Don't have an account?",
+        "havingProblem": "Having problem?",
         "or": "Or",
         "reset": "Reset Password",
         "resetDescription": "We have sent a instructions email to",
@@ -59,7 +62,35 @@
         "getStartedWithFoodFiesta": "Get Started with Food Fiesta",
         "getStartedDescription": "Enter your Phone number for sign in. Enjoy your food :)",
         "phoneNumber": "Phone Number",
-        "signUp": "Sign Up"
+        "signUp": "Sign Up",
+        "error": {
+            "email": "Enter a valid email address",
+            "password": "Password must be at least 6 characters",
+            "phoneNumber": "Enter a valid phone number",
+            "name": "Enter your full name",
+            "acceptTerms": "You must accept the terms and conditions",
+            "required": "This field is required",
+            "invalid": "Invalid email address",
+            "reset": "Reset password failed",
+            "login": "Login failed",
+            "register": "Register failed",
+            "resetPassword": "Reset password failed",
+            "phoneNumberExist": "Phone number already exist",
+            "facebook": "Facebook login failed",
+            "google": "Google login failed",
+            "server": "Server error",
+            "unknown": "Unknown error",
+            "userNotFound": "User not found",
+            "wrongPassword": "Wrong password",
+            "userDisabled": "User disabled",
+            "tooManyRequests": "Too many requests",
+            "operationNotAllowed": "Operation not allowed",
+            "invalidEmail": "Invalid email address",
+            "emailAlreadyInUse": "Email already in use",
+            "weakPassword": "Weak password",
+            "requiresRecentLogin": "Requires recent login",
+            "invalidLoginCredentials": "Invalid login credentials"
+        }
     },
     "home": {
         "title": "Home"

@@ -2,6 +2,7 @@ name: gen
 description: "A new Flutter package project."
 version: 0.0.1
 homepage: null
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 environment:
   sdk: '>=3.2.5 <4.0.0'
@@ -17,6 +18,8 @@ dependencies:
   envied: ^0.5.0
   equatable: ^2.0.5
   vexana: ^3.5.4
+    # git:
+    #   url: https://github.com/behzodfaiziev/vexana.git
 
 dev_dependencies:
   flutter_test:

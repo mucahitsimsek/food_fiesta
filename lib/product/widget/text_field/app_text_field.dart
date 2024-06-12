@@ -1,5 +1,6 @@
-import 'package:architecture_template/product/utility/constants/enums/app_values.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:food_fiesta/product/utility/constants/enums/app_values.dart';
 import 'package:gen/gen.dart';
 import 'package:kartal/kartal.dart';
 
@@ -9,6 +10,9 @@ class AppTextField extends StatefulWidget {
     this.hintText,
     this.obscureText,
     this.suffixIcon,
+    this.validator,
+    this.formKey,
+    this.onChanged,
     super.key,
   });
 
@@ -20,6 +24,11 @@ class AppTextField extends StatefulWidget {
 
   final Widget? suffixIcon;
 
+  final String? Function(String?)? validator;
+
+  final GlobalKey<FormState>? formKey;
+
+  final void Function(String value)? onChanged;
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -27,6 +36,9 @@ class AppTextField extends StatefulWidget {
 class _AppTextFieldState extends State<AppTextField> {
   bool obscureText = false;
   TextEditingController? controller;
+
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
   @override
   void initState() {
     super.initState();
@@ -50,7 +62,6 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: context.sized.width * 0.9,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -59,7 +70,7 @@ class _AppTextFieldState extends State<AppTextField> {
             Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                widget.hintText?.toUpperCase() ?? '',
+                widget.hintText?.tr().toUpperCase() ?? '',
                 style: TextStyle(
                   color: ColorName.bodyText, // Metin rengi
                   fontSize: AppValues.smallBig.value, // Metin boyutu
@@ -68,29 +79,34 @@ class _AppTextFieldState extends State<AppTextField> {
             )
           else
             Container(),
-          TextFormField(
-            controller: widget.controller ?? controller,
-            decoration: InputDecoration(
-              hintText: widget.hintText ?? '',
-              suffixIcon: widget.suffixIcon ??
-                  (widget.obscureText != null
-                      ? IconButton(
-                          onPressed: () {
-                            setState(() {
-                              obscureText = !obscureText;
-                            });
-                          },
-                          icon: Icon(
-                            obscureText ? Icons.visibility_off : Icons.visibility,
-                            color: ColorName.bodyText,
-                          ),
-                        )
-                      : null),
-            ),
-            obscureText: obscureText,
-            style: context.general.textTheme.titleMedium!.copyWith(
-              fontWeight: FontWeight.bold,
-              color: ColorName.mainColorBlack,
+          Form(
+            key: widget.formKey,
+            child: TextFormField(
+              controller: widget.controller ?? controller,
+              validator: widget.validator,
+              onChanged: widget.onChanged,
+              decoration: InputDecoration(
+                hintText: widget.hintText?.tr() ?? '',
+                suffixIcon: widget.suffixIcon ??
+                    (widget.obscureText != null && widget.obscureText! == true
+                        ? IconButton(
+                            onPressed: () {
+                              setState(() {
+                                obscureText = !obscureText;
+                              });
+                            },
+                            icon: Icon(
+                              obscureText ? Icons.visibility_off : Icons.visibility,
+                              color: ColorName.bodyText,
+                            ),
+                          )
+                        : null),
+              ),
+              obscureText: obscureText,
+              style: context.general.textTheme.titleMedium!.copyWith(
+                fontWeight: FontWeight.bold,
+                color: ColorName.mainColorBlack,
+              ),
             ),
           ),
         ],
